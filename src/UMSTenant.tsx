@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AsyncButton, DataTable, FilterPanel, Label, Modal, Select, TitleBar, WidgetWrapper, useToast } from "uxp/components";
+import { AsyncButton, DataTable, FilterPanel, Input, Label, Modal, Select, TitleBar, WidgetWrapper, useToast } from "uxp/components";
 import { IContextProvider } from "./uxp";
 
 interface IWidgetProps {
@@ -23,6 +23,7 @@ function getLabelForMeter(meterId: string) {
 const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     const toast = useToast();
     const [tenants, setTenants] = useState([]);
+    const [budget, setBudget] = useState('');
     const [registeredMeters, setRegisteredMeters] = useState([]);
     const [selectedTenant, setSelectedTenant] = useState(null);
     const [selectedMeter, setSelectedMeter] = useState(null);
@@ -52,7 +53,13 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
             return;
         }
 
+        if (!budget) {
+            setError("Budget can not be empty")
+            return;
+        }
+
         const params = {
+            budget,
             meterId: selectedMeter,
             tenantId: selectedTenant?.tenantID
         }
@@ -60,16 +67,16 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         res === '{}' ?
             toast.error("This meter is already in use, please check for another meter") :
             toast.info("Meter added successfully!!!");
+        setBudget('');
         setAddMeter(false);
         setSelectedMeter(null);
         getAllRegisteredMeters();
-        // return;
     }
 
     function getMetersForTenant(tenantID: string) {
         const meters = registeredMeters.filter(m => m.tenant === tenantID);
         const meterIds = meters.map(m => m.meter);
-        const meterName = meterIds.map(m => getLabelForMeter(m));        
+        const meterName = meterIds.map(m => getLabelForMeter(m));
         return meterName.join(', ') || "No Meters Found";
     }
 
@@ -103,26 +110,37 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                 ]}
             />
             <Modal className="add-meter" title="Register Meter" show={addMeter} onClose={() => setAddMeter(false)}>
-                
-                <div className="row">
+                <div className="tenant-name">
                     <p className="label">Name : </p>
                     <p>{selectedTenant?.tenantName}</p>
                 </div>
-                
-                <div className="select-meter">
-                    <Label>Select Meter</Label>
-                    <Select
-                        options={METERS}
-                        selected={selectedMeter}
-                        valueField="id"
-                        labelField="name"
-                        onChange={v => {
-                            setError(null);
-                            setSelectedMeter(v);
-                        }}
-                    />
+                <div className="row">
+                    <div className="col">
+                        <Label>Select Meter</Label>
+                        <Select
+                            options={METERS}
+                            selected={selectedMeter}
+                            valueField="id"
+                            labelField="name"
+                            onChange={v => {
+                                setError(null);
+                                setSelectedMeter(v);
+                            }}
+                        />
+                    </div>
+                    <div className="col">
+                        <Label>Budget</Label>
+                        <Input
+                            type="number"
+                            value={budget}
+                            onChange={v => {
+                                setError(null);
+                                setBudget(v);
+                            }}
+                        />
+                    </div>
                 </div>
-                
+
                 {error && <div className="error">{error}</div>}
                 <div className="actions">
                     <AsyncButton title="Submit" onClick={() => addMeterForTenant()} />

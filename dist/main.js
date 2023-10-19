@@ -11,7 +11,7 @@
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.id, ".tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 25px 15px 0 15px;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .row {\n  display: flex;\n}\n.add-meter .row .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .select-meter {\n  margin-top: 15px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}", ""]);
+exports.push([module.id, ".tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 25px 15px 0 15px;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -487,6 +487,7 @@ function getLabelForMeter(meterId) {
 const UMSTenant = (props) => {
     const toast = (0, components_1.useToast)();
     const [tenants, setTenants] = (0, react_1.useState)([]);
+    const [budget, setBudget] = (0, react_1.useState)('');
     const [registeredMeters, setRegisteredMeters] = (0, react_1.useState)([]);
     const [selectedTenant, setSelectedTenant] = (0, react_1.useState)(null);
     const [selectedMeter, setSelectedMeter] = (0, react_1.useState)(null);
@@ -516,7 +517,12 @@ const UMSTenant = (props) => {
                 setError("Please select a meter from the list");
                 return;
             }
+            if (!budget) {
+                setError("Budget can not be empty");
+                return;
+            }
             const params = {
+                budget,
                 meterId: selectedMeter,
                 tenantId: selectedTenant === null || selectedTenant === void 0 ? void 0 : selectedTenant.tenantID
             };
@@ -524,10 +530,10 @@ const UMSTenant = (props) => {
             res === '{}' ?
                 toast.error("This meter is already in use, please check for another meter") :
                 toast.info("Meter added successfully!!!");
+            setBudget('');
             setAddMeter(false);
             setSelectedMeter(null);
             getAllRegisteredMeters();
-            // return;
         });
     }
     function getMetersForTenant(tenantID) {
@@ -554,15 +560,22 @@ const UMSTenant = (props) => {
                 },
             ] }),
         react_1.default.createElement(components_1.Modal, { className: "add-meter", title: "Register Meter", show: addMeter, onClose: () => setAddMeter(false) },
-            react_1.default.createElement("div", { className: "row" },
+            react_1.default.createElement("div", { className: "tenant-name" },
                 react_1.default.createElement("p", { className: "label" }, "Name : "),
                 react_1.default.createElement("p", null, selectedTenant === null || selectedTenant === void 0 ? void 0 : selectedTenant.tenantName)),
-            react_1.default.createElement("div", { className: "select-meter" },
-                react_1.default.createElement(components_1.Label, null, "Select Meter"),
-                react_1.default.createElement(components_1.Select, { options: METERS, selected: selectedMeter, valueField: "id", labelField: "name", onChange: v => {
-                        setError(null);
-                        setSelectedMeter(v);
-                    } })),
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Select Meter"),
+                    react_1.default.createElement(components_1.Select, { options: METERS, selected: selectedMeter, valueField: "id", labelField: "name", onChange: v => {
+                            setError(null);
+                            setSelectedMeter(v);
+                        } })),
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Budget"),
+                    react_1.default.createElement(components_1.Input, { type: "number", value: budget, onChange: v => {
+                            setError(null);
+                            setBudget(v);
+                        } }))),
             error && react_1.default.createElement("div", { className: "error" }, error),
             react_1.default.createElement("div", { className: "actions" },
                 react_1.default.createElement(components_1.AsyncButton, { title: "Submit", onClick: () => addMeterForTenant() })))));
