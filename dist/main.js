@@ -472,21 +472,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
-const METERS = [
-    { name: 'METER1', id: 'PH_KWH1' },
-    { name: 'METER2', id: 'PH_KWH2' },
-    { name: 'METER3', id: 'PH_KWH3' },
-    { name: 'METER4', id: 'PH_KWH4' },
-    { name: 'METER5', id: 'PH_KWH5' }
-];
-function getLabelForMeter(meterId) {
-    var _a;
-    const meter = METERS.filter(m => m.id === meterId);
-    return (_a = meter[0]) === null || _a === void 0 ? void 0 : _a.name;
-}
 const UMSTenant = (props) => {
     const toast = (0, components_1.useToast)();
     const [tenants, setTenants] = (0, react_1.useState)([]);
+    const [meters, setMeters] = (0, react_1.useState)([]);
     const [budget, setBudget] = (0, react_1.useState)('');
     const [registeredMeters, setRegisteredMeters] = (0, react_1.useState)([]);
     const [selectedTenant, setSelectedTenant] = (0, react_1.useState)(null);
@@ -495,6 +484,7 @@ const UMSTenant = (props) => {
     const [error, setError] = (0, react_1.useState)(null);
     (0, react_1.useEffect)(() => {
         getTenants();
+        getMeters();
         getAllRegisteredMeters();
     }, []);
     function getTenants() {
@@ -502,6 +492,13 @@ const UMSTenant = (props) => {
             const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
             const jsonObj = JSON.parse(res);
             setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
+        });
+    }
+    function getMeters() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllMeters', {});
+            const jsonObj = JSON.parse(res);
+            setMeters(jsonObj);
         });
     }
     function getAllRegisteredMeters() {
@@ -536,6 +533,11 @@ const UMSTenant = (props) => {
             getAllRegisteredMeters();
         });
     }
+    function getLabelForMeter(meterId) {
+        var _a;
+        const meter = meters.filter(m => m.id === meterId);
+        return (_a = meter[0]) === null || _a === void 0 ? void 0 : _a.name;
+    }
     function getMetersForTenant(tenantID) {
         const meters = registeredMeters.filter(m => m.tenant === tenantID);
         const meterIds = meters.map(m => m.meter);
@@ -566,7 +568,7 @@ const UMSTenant = (props) => {
             react_1.default.createElement("div", { className: "row" },
                 react_1.default.createElement("div", { className: "col" },
                     react_1.default.createElement(components_1.Label, null, "Select Meter"),
-                    react_1.default.createElement(components_1.Select, { options: METERS, selected: selectedMeter, valueField: "id", labelField: "name", onChange: v => {
+                    react_1.default.createElement(components_1.Select, { options: meters, selected: selectedMeter, valueField: "id", labelField: "name", onChange: v => {
                             setError(null);
                             setSelectedMeter(v);
                         } })),

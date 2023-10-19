@@ -7,22 +7,10 @@ interface IWidgetProps {
     instanceId?: string
 }
 
-const METERS = [
-    { name: 'METER1', id: 'PH_KWH1' },
-    { name: 'METER2', id: 'PH_KWH2' },
-    { name: 'METER3', id: 'PH_KWH3' },
-    { name: 'METER4', id: 'PH_KWH4' },
-    { name: 'METER5', id: 'PH_KWH5' }
-]
-
-function getLabelForMeter(meterId: string) {
-    const meter = METERS.filter(m => m.id === meterId)
-    return meter[0]?.name;
-}
-
 const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     const toast = useToast();
     const [tenants, setTenants] = useState([]);
+    const [meters, setMeters] = useState([]);
     const [budget, setBudget] = useState('');
     const [registeredMeters, setRegisteredMeters] = useState([]);
     const [selectedTenant, setSelectedTenant] = useState(null);
@@ -32,6 +20,7 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
 
     useEffect(() => {
         getTenants();
+        getMeters();
         getAllRegisteredMeters();
     }, []);
 
@@ -39,6 +28,12 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
         const jsonObj = JSON.parse(res);
         setTenants(jsonObj?.tenants);
+    }
+
+    async function getMeters() {
+        const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllMeters', {});
+        const jsonObj = JSON.parse(res);
+        setMeters(jsonObj);
     }
 
     async function getAllRegisteredMeters() {
@@ -72,6 +67,11 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         setSelectedMeter(null);
         getAllRegisteredMeters();
     }
+
+    function getLabelForMeter(meterId: string) {
+        const meter = meters.filter(m => m.id === meterId)
+        return meter[0]?.name;
+    }    
 
     function getMetersForTenant(tenantID: string) {
         const meters = registeredMeters.filter(m => m.tenant === tenantID);
@@ -118,7 +118,7 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                     <div className="col">
                         <Label>Select Meter</Label>
                         <Select
-                            options={METERS}
+                            options={meters}
                             selected={selectedMeter}
                             valueField="id"
                             labelField="name"

@@ -48,6 +48,22 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "GetAllMeters",
+            "outputs": [
+              ""
+            ],
+            "parameters": [],
+            "parametersExtended": [],
+            "published": false,
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"}},\"required\":[\"_id\",\"name\",\"id\"]}}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "GetAllRegisteredMeters",
             "outputs": [
               ""
@@ -79,6 +95,69 @@
         "attributes": [],
         "flows": {
           "blocks": [
+            {
+              "CollectionName": "4b7d9d99-ce9c-4426-b8b6-9a7137a2704d",
+              "configuration": "[]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "ba8b82cb-2a5b-48b0-e2a6-b00f663980fe:output:output",
+                    "target": "fbb3a1bf-f7e9-4fc1-8396-206f29c0e826:input:trigger"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "fbb3a1bf-f7e9-4fc1-8396-206f29c0e826:output:output",
+                    "target": "c7333f06-6ac9-4c25-c7cd-fd0d20ccfc4b:input:input"
+                  }
+                ]
+              },
+              "id": "fbb3a1bf-f7e9-4fc1-8396-206f29c0e826",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 417.25006103515625,
+                "top": 208.50000381469727
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "GetAllMeters",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find all documents",
+              "type": "modelcollections:findall",
+              "UpdateAsAttributes": false
+            },
             {
               "CollectionName": "e637e007-1c6a-47b6-bc07-6f313791bd11",
               "configuration": "[]",
@@ -411,6 +490,57 @@
               "schema": "{\"type\":\"object\"}",
               "static": true,
               "surface": "AddMeter",
+              "title": "Action",
+              "type": "actionstart"
+            },
+            {
+              "actionName": "GetAllMeters",
+              "canOverrideCredentials": false,
+              "capability": "",
+              "connections": {
+                "inputs": [],
+                "outputs": [
+                  {
+                    "source": "ba8b82cb-2a5b-48b0-e2a6-b00f663980fe:output:output",
+                    "target": "fbb3a1bf-f7e9-4fc1-8396-206f29c0e826:input:trigger"
+                  }
+                ]
+              },
+              "debug": false,
+              "docs": "",
+              "id": "ba8b82cb-2a5b-48b0-e2a6-b00f663980fe",
+              "initiate": false,
+              "inputValues": [],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 158.50000381469727,
+                "top": 154.75000381469727
+              },
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"}},\"required\":[\"_id\",\"name\",\"id\"]}}",
+              "static": true,
+              "surface": "GetAllMeters",
               "title": "Action",
               "type": "actionstart"
             },
@@ -872,6 +1002,51 @@
               "surface": "AddMeter",
               "title": "Output",
               "type": "actionoutput2"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "fbb3a1bf-f7e9-4fc1-8396-206f29c0e826:output:output",
+                    "target": "c7333f06-6ac9-4c25-c7cd-fd0d20ccfc4b:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "c7333f06-6ac9-4c25-c7cd-fd0d20ccfc4b",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 677.2499847412109,
+                "top": 260.75000762939453
+              },
+              "surface": "GetAllMeters",
+              "title": "Output",
+              "type": "actionoutput2"
             }
           ],
           "position": {
@@ -924,6 +1099,22 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "GetAllMeters",
+            "outputs": [
+              ""
+            ],
+            "parameters": [],
+            "parametersExtended": [],
+            "published": false,
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"}},\"required\":[\"_id\",\"name\",\"id\"]}}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "GetAllRegisteredMeters",
             "outputs": [
               ""
@@ -960,6 +1151,12 @@
       "Key": "97",
       "MetadataDictionary": "{\"parameters\":[{\"id\":\"tenant\",\"label\":\"Tenant Provider\",\"type\":\"model\",\"subtype\":\"tenant-provider\"}],\"tags\":[],\"capabilities\":[],\"onSave\":\"\"}",
       "ModelCollections": [
+        {
+          "Attributes": "[{\"name\":\"name\",\"dataType\":\"string\"},{\"name\":\"id\",\"dataType\":\"string\"}]",
+          "GUID": "4b7d9d99-ce9c-4426-b8b6-9a7137a2704d",
+          "MapKey": "97",
+          "Name": "meters"
+        },
         {
           "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"meter\",\"dataType\":\"string\"},{\"name\":\"budget\",\"dataType\":\"string\"}]",
           "GUID": "e637e007-1c6a-47b6-bc07-6f313791bd11",
