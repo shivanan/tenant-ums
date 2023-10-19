@@ -1,0 +1,51 @@
+.tenants {
+    position: relative;
+    height: 85%;
+    width: 100%;
+    padding: 25px 15px 0 15px;
+
+    .data-list .data-table thead tr th {
+        padding-left: 15px;
+        text-align: left;
+        background: #e3e3e3;
+    }
+
+    .data-list .data-list-item {
+        height: 50px;
+    }
+
+    .data-list-footer {
+        position: unset;
+    }
+
+    .data-table-item {
+        margin-left: 7.5px;
+    }
+}
+
+.add-meter {
+    // position: absolute;
+    display: flex;
+    .row {
+        display: flex;
+        .label{
+            width: 60px;
+            font-weight: 700;
+        }
+    }
+    .select-meter{
+        margin-top: 15px;
+    }
+    .error{
+        color: red;
+        margin: 15px 0;
+        padding: 5px;
+    }
+    .actions {
+        margin: 15px 0;
+        .uxp-button {
+            margin: 0;
+            float: right;
+        }
+    }
+}

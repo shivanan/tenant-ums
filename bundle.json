@@ -1,0 +1,16 @@
+{
+    "id": "dece8055-b3de-42ec-b596-8ffa8fd0a794",
+    "author": "",
+    "widgets": [
+        {
+            "id": "ums_tenant",
+            "name": "UMS Tenant",
+            "description": "UMS Tenant",
+            "icon": "",
+            "tags": []
+        }
+    ],
+    "sidebarLinks": [],
+    "uis": [],
+    "menuItems": []
+}

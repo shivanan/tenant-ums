@@ -1,0 +1,37 @@
+{
+    "id": "44578c6a-6076-4941-dc0d-abcfd8383a40",
+    "author": "",
+    "widgets": [
+        {
+            "id": "uxp_tenant",
+            "name": "uxp_tenant",
+            "description": "A sample widget",
+            "icon": "",
+            "tags":[]
+        }
+    ],
+    "sidebarLinks": [
+        {
+            "id": "uxp_tenantLink",
+            "label": "",
+            "description": "",
+            "target": "",
+            "icon": "",
+            "roles":[]
+        }
+    ],
+    "uis": [
+        {
+            "id": "uxp_tenantLink",
+            "label":"",
+            "description": "",
+            "roles": []
+        }
+    ],
+    "menuItems": [
+        {
+            "id": "uxp_tenantLink",
+            "title": "uxp_tenant"
+        }
+    ]
+}
