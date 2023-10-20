@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AsyncButton, DataTable, FilterPanel, Input, Label, Modal, Select, TitleBar, WidgetWrapper, useToast } from "uxp/components";
+import { AsyncButton, Button, DataTable, FilterPanel, Input, Label, Modal, Select, TitleBar, WidgetWrapper, useToast } from "uxp/components";
 import { IContextProvider } from "./uxp";
 
 interface IWidgetProps {
@@ -17,6 +17,9 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     const [selectedMeter, setSelectedMeter] = useState(null);
     const [addMeter, setAddMeter] = useState(false);
     const [error, setError] = useState(null);
+
+    const [selectedTenantMeters, setSelectedTenantMeters] = useState([]);
+    const [deleteMeter, setDeleteMeter] = useState(null);
 
     useEffect(() => {
         getTenants();
@@ -68,6 +71,18 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         getAllRegisteredMeters();
     }
 
+    async function deleteMeterForTenant() {
+
+        const params = {
+            meterId: deleteMeter,
+            tenantId: selectedTenant?.tenantID
+        }
+
+        const res = await props.uxpContext.executeAction('TenantUMS', 'DeleteMeterForTenant', params);
+        setAddMeter(false);
+        getAllRegisteredMeters();
+    }
+
     function getLabelForMeter(meterId: string) {
         const meter = meters.filter(m => m.id === meterId)
         return meter[0]?.name;
@@ -80,6 +95,14 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         return meterName.join(', ') || "No Meters Found";
     }
 
+    function handleEdit(item: any) {
+        setAddMeter(true);
+        setSelectedTenant(item);
+        const tenantMeters = registeredMeters.filter(r => r.tenant === item.tenantID);
+        setSelectedTenantMeters(tenantMeters);
+        
+    }
+
     return (
         <WidgetWrapper>
             <TitleBar title='UMS Tenants'>
@@ -88,13 +111,9 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
             </TitleBar>
             <DataTable
                 className='tenants'
-                activeClass="active"
                 data={tenants}
                 pageSize={5}
-                onClickRow={item => {
-                    setAddMeter(true);
-                    setSelectedTenant(item)
-                }}
+                activeClass="active"
                 columns={[
                     {
                         title: "Name",
@@ -106,44 +125,72 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                         width: "30%",
                         renderColumn: item => <div className='data-table-item'>{getMetersForTenant(item?.tenantID)}</div>
                     },
+                    {
+                        title: "Actions",
+                        width: "30%",
+                        renderColumn: item => <Button title="Edit" onClick={() => handleEdit(item)}/>
+                    },
 
                 ]}
             />
             <Modal className="add-meter" title="Register Meter" show={addMeter} onClose={() => setAddMeter(false)}>
-                <div className="tenant-name">
+                {/* <div className="tenant-name">
                     <p className="label">Name : </p>
                     <p>{selectedTenant?.tenantName}</p>
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <Label>Select Meter</Label>
-                        <Select
-                            options={meters}
-                            selected={selectedMeter}
-                            valueField="id"
-                            labelField="name"
-                            onChange={v => {
-                                setError(null);
-                                setSelectedMeter(v);
-                            }}
-                        />
+                </div> */}
+                <div className="register-meter">
+                    <div className="row">
+                        <div className="col">
+                            <Label>Select Meter</Label>
+                            <Select
+                                options={meters}
+                                selected={selectedMeter}
+                                valueField="id"
+                                labelField="name"
+                                onChange={v => {
+                                    setError(null);
+                                    setSelectedMeter(v);
+                                }}
+                            />
+                        </div>
+                        <div className="col">
+                            <Label>Budget</Label>
+                            <Input
+                                type="number"
+                                value={budget}
+                                onChange={v => {
+                                    setError(null);
+                                    setBudget(v);
+                                }}
+                            />
+                        </div>
                     </div>
-                    <div className="col">
-                        <Label>Budget</Label>
-                        <Input
-                            type="number"
-                            value={budget}
-                            onChange={v => {
-                                setError(null);
-                                setBudget(v);
-                            }}
-                        />
+                    {error && <div className="error">{error}</div>}
+                    <div className="actions">
+                            <AsyncButton title="Add Meter" onClick={() => addMeterForTenant()} />
                     </div>
                 </div>
 
-                {error && <div className="error">{error}</div>}
-                <div className="actions">
-                    <AsyncButton title="Submit" onClick={() => addMeterForTenant()} />
+                
+
+                <div className="delete-meter">
+                    <div className="col">
+                        <Label>Select Meter</Label>
+                        <Select
+                            options={selectedTenantMeters}
+                            selected={deleteMeter}
+                            valueField="meter"
+                            labelField="meter"
+                            onChange={v => {
+                                setError(null);
+                                setDeleteMeter(v)
+                            }}
+                        />
+                    </div>
+                    <div className="actions">
+                        <AsyncButton title="Delete Meter" onClick={() => deleteMeterForTenant()} />
+                    </div>
+                    
                 </div>
             </Modal>
         </WidgetWrapper>
