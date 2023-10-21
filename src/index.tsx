@@ -3,21 +3,25 @@ import { registerWidget, registerLink, registerUI, IContextProvider, } from './u
 import { TitleBar, FilterPanel, WidgetWrapper } from "uxp/components";
 import './styles.scss';
 import UMSTenant from "./UMSTenant";
+import { PriceConfig } from "./GlobalConfig";
 
 
 
-/**
- * Register as a Widget
- */
 registerWidget({
     id: "ums_tenant",
     widget: UMSTenant,
     configs: {
         layout: {
-            // w: 12,
-            // h: 12,
-            // minH: 12,
-            // minW: 12
+     
+        }
+    }
+});
+registerWidget({
+    id: "price-config",
+    widget: PriceConfig,
+    configs: {
+        layout: {
+     
         }
     }
 });

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AsyncButton, Button, DataTable, FilterPanel, Input, Label, Modal, Select, TitleBar, WidgetWrapper, useToast } from "uxp/components";
+import { AsyncButton, Button, DataTable, FilterPanel, Input, Label, Modal, Select, TitleBar, ToggleFilter, WidgetWrapper, useToast } from "uxp/components";
 import { IContextProvider } from "./uxp";
 
 interface IWidgetProps {
@@ -21,12 +21,16 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     const [selectedTenantMeters, setSelectedTenantMeters] = useState([]);
     const [deleteMeter, setDeleteMeter] = useState(null);
 
-    useEffect(() => {
-        getTenants();
-        getMeters();
-        getAllRegisteredMeters();
-    }, []);
+    const [meterType,setMeterType] = React.useState<string>('energy');
 
+    useEffect(() => {
+        getMeters();
+    }, [meterType]);
+    useEffect(() => {
+        getAllRegisteredMeters();
+        getTenants();
+
+    }, []);
     async function getTenants() {
         const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
         const jsonObj = JSON.parse(res);
@@ -34,7 +38,7 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     }
 
     async function getMeters() {
-        const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllMeters', {});
+        const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllMeters', {type:meterType});
         const jsonObj = JSON.parse(res);
         setMeters(jsonObj);
     }
@@ -51,15 +55,16 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
             return;
         }
 
-        if (!budget) {
-            setError("Budget can not be empty")
-            return;
-        }
+        // if (!budget) {
+        //     setError("Budget can not be empty")
+        //     return;
+        // }
 
         const params = {
             budget,
             meterId: selectedMeter,
-            tenantId: selectedTenant?.tenantID
+            tenantId: selectedTenant?.tenantID,
+            type:meterType,
         }
         const res = await props.uxpContext.executeAction('TenantUMS', 'AddMeter', params);
         res === '{}' ?
@@ -75,7 +80,8 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
 
         const params = {
             meterId: deleteMeter,
-            tenantId: selectedTenant?.tenantID
+            tenantId: selectedTenant?.tenantID,
+            type:meterType,
         }
 
         const res = await props.uxpContext.executeAction('TenantUMS', 'DeleteMeterForTenant', params);
@@ -83,16 +89,31 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         getAllRegisteredMeters();
     }
 
-    function getLabelForMeter(meterId: string) {
-        const meter = meters.filter(m => m.id === meterId)
-        return meter[0]?.name;
-    }    
+    // function getLabelForMeter(meterId: string) {
+    //     const meter = registeredMeters.filter(m => m.meter === meterId)
+    //     return meter[0]?.name + meter[0]?.type;
+    // }    
 
     function getMetersForTenant(tenantID: string) {
         const meters = registeredMeters.filter(m => m.tenant === tenantID);
-        const meterIds = meters.map(m => m.meter);
-        const meterName = meterIds.map(m => getLabelForMeter(m));
-        return meterName.join(', ') || "No Meters Found";
+        let waterMeters = meters.filter((x)=>x.type=='water');
+        let energyMeters = meters.filter((x)=>x.type=='energy');
+        return <>
+        <div className='tu-meters water'>
+            {waterMeters.map((m)=><div className='tu-meter-id'>
+                <div className='tu-logo' />
+                <div className='tu-txt'>{m.meter}</div>
+            </div>)}
+        </div>
+        <div className='tu-meters energy'>
+            {energyMeters.map((m)=><div className='tu-meter-id'>
+                <div className='tu-logo' />
+                <div className='tu-txt'>{m.meter}</div>
+            </div>)}
+        </div>
+        </>;
+        return meters.map((x)=>`${x.type}/${x.meter}`);
+
     }
 
     function handleEdit(item: any) {
@@ -105,7 +126,7 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
 
     return (
         <WidgetWrapper>
-            <TitleBar title='UMS Tenants'>
+            <TitleBar title='Tenant Meter Configuration'>
                 {/* <FilterPanel>
                 </FilterPanel> */}
             </TitleBar>
@@ -122,18 +143,22 @@ const UMSTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                     },
                     {
                         title: "Meters",
-                        width: "30%",
+                        width: "40%",
                         renderColumn: item => <div className='data-table-item'>{getMetersForTenant(item?.tenantID)}</div>
                     },
                     {
-                        title: "Actions",
-                        width: "30%",
+                        title: "",
+                        width: "20%",
                         renderColumn: item => <Button title="Edit" onClick={() => handleEdit(item)}/>
                     },
 
                 ]}
             />
-            <Modal className="add-meter" title="Register Meter" show={addMeter} onClose={() => setAddMeter(false)}>
+            <Modal className="add-meter" title="Register Meter" show={addMeter} onClose={() => setAddMeter(false)}
+            headerContent={<>
+            <ToggleFilter options={[{value:'energy',label:'Energy'},{value:'water',label:'Water'}]} value={meterType} onChange={setMeterType} />
+            </>}
+            >
                 {/* <div className="tenant-name">
                     <p className="label">Name : </p>
                     <p>{selectedTenant?.tenantName}</p>

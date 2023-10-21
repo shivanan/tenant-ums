@@ -1,17 +1,24 @@
+@import "common.scss";
 .tenants {
     position: relative;
     height: 85%;
     width: 100%;
     padding: 25px 15px 0 15px;
-
+    .data-list {
+        border: 1px solid #e3e3e3;
+    }
     .data-list .data-table thead tr th {
         padding-left: 15px;
         text-align: left;
         background: #e3e3e3;
     }
 
+
     .data-list .data-list-item {
         height: 50px;
+        &.active {
+            background-color: #FAFAFA !important;
+        }
     }
 
     .data-list-footer {
@@ -66,6 +73,54 @@
         .uxp-button {
             margin: 0;
             float: right;
+        }
+    }
+}
+.tu-meters {
+    display:flex;
+    font-size:10px;
+    color:white;
+    flex-wrap: wrap;
+    &.energy {
+        .tu-meter-id {
+
+            background-color: $energyColor;
+        }
+        .tu-logo {
+            filter:invert(1);
+            // background-image: url(../images/energy.svg);
+            background-image:$energyIcon;
+        }
+    }
+    &.water {
+        .tu-meter-id {
+
+            background-color: $waterColor;
+        }
+
+
+        .tu-logo {
+            background-image: $waterIcon;
+        }
+    }
+    
+    
+    .tu-meter-id {
+        padding: 5px 8px;
+        display: flex;
+        border-radius: 8px;
+        align-items: center;
+        color: white;
+        margin:2px;
+        .tu-logo {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width:20px;
+            height:20px;
+        }
+        .tu-txt {
+            margin-left: 5px;
         }
     }
 }

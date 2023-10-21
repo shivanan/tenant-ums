@@ -1,0 +1,66 @@
+@import "common.scss";
+
+.tu-config-container {
+    padding:20px;
+    h3 {
+        display: inline-block;
+        padding:5px 9px;
+        color: white;
+        border-radius:10px;
+
+        &.energy {
+            background-color: $energyColor;
+        }
+        &.water {
+            background-color: $waterColor;
+        }
+    }
+    .tu-icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        vertical-align: center;
+        transform: translateY(3px);
+        margin-right:5px;
+        filter:invert(1);
+        &.energy {
+            background-image:$energyIcon;
+            
+        }
+        &.water {
+            background-image: $waterIcon;
+        }
+    }
+
+    .tu-energy,.tu-water {
+        display:flex;
+        align-items: center;
+        margin-bottom:40px;
+        .tu-unit {
+            margin: 0px 10px;
+            opacity:0.7;
+            font-size:1.2em;
+        }
+        label {
+            width:100px;
+            margin:0px;
+        }
+        input {
+            width:100px;
+        }
+    }
+    .tu-energy {
+        // background-color: $energyColor;
+        // color: white;
+    }
+    .action {
+        padding:20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+}
