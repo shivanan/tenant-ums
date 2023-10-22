@@ -2,6 +2,20 @@
 
 .tu-config-container {
     padding:20px;
+    display: flex;
+    
+    .tu-col {
+        padding-right: 30px;
+        &:first-of-type {
+            border-right: 1px solid #80808024;
+        }
+        padding-left: 30px;
+    }
+    .tu-c {
+        &:last-of-type {
+            border-top: 1px solid #80808024;
+        }
+    }
     h3 {
         display: inline-block;
         padding:5px 9px;
@@ -13,6 +27,14 @@
         }
         &.water {
             background-color: $waterColor;
+        }
+        &.tax {
+            // background-color: #EFEFEF;
+            color: #424242;
+        }
+        &.invoice {
+            // background-color: #EFEFEF;
+            color:#424242;
         }
     }
     .tu-icon {
@@ -33,9 +55,15 @@
         &.water {
             background-image: $waterIcon;
         }
+        &.tax {
+            display:none;
+        }
+        &.invoice {
+            display:none;
+        }
     }
 
-    .tu-energy,.tu-water {
+    .tu-energy,.tu-water,.tu-tax,.tu-invoice {
         display:flex;
         align-items: center;
         margin-bottom:40px;
@@ -52,15 +80,35 @@
             width:100px;
         }
     }
+    .tu-tax {
+        label {
+            width:50px;
+        }
+    }
+    .tu-invoice {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .tu-energy {
         // background-color: $energyColor;
         // color: white;
     }
-    .action {
-        padding:20px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
+    a.tu-upload {
+        text-decoration: underline;
+        display:block;
+        cursor:pointer;
     }
+    .tu-invoice-content {
+        font-weight: bold;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+    }
+}
+.tu-action {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
