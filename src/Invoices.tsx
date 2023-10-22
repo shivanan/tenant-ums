@@ -184,7 +184,7 @@ const InvoiceList:React.FunctionComponent<IWidgetProps & {invoices:IInvoice[],ed
             title: " ",
             width: "10%",
             renderColumn: item => <>
-            {item.status != 'paid' && <AsyncButton title={'Mark as Paid'} onClick={async ()=>{
+            {(item.status != 'paid' && props.editable) && <AsyncButton title={'Mark as Paid'} onClick={async ()=>{
                 try {
                     await props.uxpContext.executeAction('TenantUMS','UpdateInvoiceStatus',{invoice:item?.id,status:'paid'},{json:true});
                     toast.success('Marked as paid!💪');
