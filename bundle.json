@@ -4,8 +4,8 @@
     "widgets": [
         {
             "id": "ums_tenant",
-            "name": "UMS Tenant",
-            "description": "UMS Tenant",
+            "name": "Tenant Meter Configuration",
+            "description": "Assign meters to tenants",
             "icon": "",
             "tags": []
         },
@@ -13,6 +13,20 @@
             "id": "price-config",
             "name": "Tenant Utility Metering Configuration",
             "description": "This widget is for configuring various rates and parameters for tenant utility metering and billing",
+            "icon": "",
+            "tags": []
+        },
+        {
+            "id": "invoices",
+            "name": "Tenant Utility  Invoices",
+            "description": "A list of invoices that have been generated",
+            "icon": "",
+            "tags": []
+        },
+        {
+            "id": "my-invoices",
+            "name": "My Utility  Invoices",
+            "description": "A list of invoices for the tenant that I am a part of",
             "icon": "",
             "tags": []
         }

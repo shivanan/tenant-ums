@@ -4,6 +4,7 @@ import { TitleBar, FilterPanel, WidgetWrapper } from "uxp/components";
 import './styles.scss';
 import UMSTenant from "./UMSTenant";
 import { PriceConfig } from "./GlobalConfig";
+import { MyInvoices, TenantInvoices } from "./Invoices";
 
 
 
@@ -19,6 +20,25 @@ registerWidget({
 registerWidget({
     id: "price-config",
     widget: PriceConfig,
+    configs: {
+        layout: {
+     
+        }
+    }
+});
+
+registerWidget({
+    id: "invoices",
+    widget: TenantInvoices,
+    configs: {
+        layout: {
+     
+        }
+    }
+});
+registerWidget({
+    id: "my-invoices",
+    widget: MyInvoices,
     configs: {
         layout: {
      
