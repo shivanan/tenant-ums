@@ -1,3 +1,118 @@
+.tu-invoice-details {
+    h1 {
+        margin-left: 10px;
+    }
+
+    .tu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .tu-id-items {
+        display: inline-block;
+        background-color: #FAFAFA;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .tu-id-item {
+            border-bottom: 1px solid #DDDDDD66;
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            padding: 10px;
+
+            .desc {
+                width: 200px;
+            }
+
+            .consumption {
+                width: 200px;
+            }
+
+            .cost {
+                width: 200px;
+            }
+
+            >div {
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+
+
+
+            .cost {
+                text-align: right;
+            }
+
+            &.total {
+                .cost {
+                    font-weight: bold;
+                    font-size: 1.2em;
+
+                }
+            }
+
+
+        }
+    }
+
+    .tu-dates {
+        display: flex;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        .tu-date {
+            display: flex;
+            margin: 0px 10px;
+            background: #EEE;
+            /* padding: 5px 10px; */
+            align-items: center;
+            overflow: hidden;
+            border-radius: 8px;
+
+            span {
+                text-transform: uppercase;
+                padding: 5px 10px;
+                background-color: #DDD;
+            }
+
+            div {
+                padding: 5px 10px;
+            }
+        }
+    }
+
+    // editable stuff
+    .editable {
+        position: relative;
+
+        input.uxp-form-input {
+            width: 120px;
+            padding-right: 25px;
+            text-align: right;
+        }
+
+        span.discout-unit {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+
+        .uxp-button {
+            margin: auto;
+        }
+    }
+}
+
 .invoice-status {
     padding: 5px 10px;
     border-radius: 7px;
@@ -13,43 +128,5 @@
 
     &.paid {
         background-color: rgb(75 171 46);
-    }
-}
-
-.tu-id-items {
-    display: inline-block;
-
-    .tu-id-item {
-        border-bottom: 1px solid #EEE;
-        display: flex;
-        margin: 10px;
-        padding: 10px;
-
-        .desc {
-            width: 200px;
-        }
-
-        .consumption {
-            width: 200px;
-        }
-
-        .cost {
-            width: 200px;
-        }
-
-        >div {
-            flex-grow: 0;
-            flex-shrink: 0;
-        }
-
-
-
-        .cost {
-            font-weight: bold;
-            font-size: 1.2em;
-            text-align: right;
-        }
-
-
     }
 }

@@ -124,3 +124,49 @@
         }
     }
 }
+.utility-pill {
+    padding: 5px 8px;
+    display: inline-flex;
+    border-radius: 8px;
+    align-items: center;
+    color: white;
+    margin: 2px;
+
+
+    .up-logo {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+    }
+
+    .up-txt {
+        margin-left: 5px;
+    }
+
+    &.energy {
+      
+
+            background-color: $energyColor;
+   
+
+        .up-logo {
+            filter: invert(1);
+            // background-image: url(../images/energy.svg);
+            background-image: $energyIcon;
+        }
+    }
+
+    &.water {
+      
+
+            background-color: $waterColor;
+     
+
+
+        .up-logo {
+            background-image: $waterIcon;
+        }
+    }
+}
