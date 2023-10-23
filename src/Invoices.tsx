@@ -140,6 +140,17 @@ const InvoiceList:React.FunctionComponent<IWidgetProps & {invoices:IInvoice[],ed
     let [selectedInvoice,setSelectedInvoice] = React.useState<IInvoice>(null);
     let toast = useToast();
     let alerts = useAlert();
+
+    async function downloadInvoice(id:string) {
+        try {
+            let r = await props.uxpContext.executeAction('TenantUMS','GetInvoice',{id},{json:true});
+            let url = r.url || '';
+            if (!url) throw 'No url found';
+            window.open(url);
+        } catch(e) {
+            alerts.show('An error occurred while trying to download the invoice. Please try again later');
+        }
+    }
     let _invoices = props.invoices.slice();
     _invoices.sort((a,b)=>Number(new Date(a.start)) - Number(new Date(b.start)));
     return <><DataTable
@@ -165,7 +176,7 @@ const InvoiceList:React.FunctionComponent<IWidgetProps & {invoices:IInvoice[],ed
         },
         {
             title: "Amount",
-            width: "20%",
+            width: "10%",
             renderColumn: item => <div className='data-table-item'>
                 {'$' + (Number(item?.invoice?.total)||0).toFixed(2)}
                 </div>
@@ -182,8 +193,8 @@ const InvoiceList:React.FunctionComponent<IWidgetProps & {invoices:IInvoice[],ed
         },
         {
             title: " ",
-            width: "10%",
-            renderColumn: item => <>
+            width: "20%",
+            renderColumn: item => <div className='invoice-actions'>
             {(item.status != 'paid' && props.editable) && <AsyncButton title={'Mark as Paid'} onClick={async ()=>{
                 try {
                     await props.uxpContext.executeAction('TenantUMS','UpdateInvoiceStatus',{invoice:item?.id,status:'paid'},{json:true});
@@ -194,7 +205,8 @@ const InvoiceList:React.FunctionComponent<IWidgetProps & {invoices:IInvoice[],ed
                 }
 
             }} />}
-            </>
+            <AsyncButton title="Download" className="download-invoice" onClick={async ()=>downloadInvoice(item?.id)} />
+            </div>
         },
 
 

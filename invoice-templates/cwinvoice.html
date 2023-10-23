@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                font-family: sans-serif;
+                color: #424242;
+            }
+            body {
+                width:1000px;
+                box-sizing: border-box;
+                padding:30px;
+                margin:auto;
+            }
+            .header {
+                display:flex;
+                width:100%;
+                align-items:baseline;
+                justify-content: space-between;
+                /* border:1px solid blue; */
+            }
+            .header .col {
+                /* border:1px solid gray; */
+                padding:20px;
+            }
+            .header .col.right {
+                width:40%;
+                text-align: right;
+            }
+            .dtl {
+                border:1px solid #DDD;
+                border-radius:5px;
+                background-color: #FAFAFA;
+                width:100%;
+                /* overflow: hidden; */
+                border-collapse: collapse;
+                width:3in
+                
+            }
+            .dtl td {
+                    padding:10px;
+                    border:1px solid #DDD;
+                }
+                .dtl tr {
+                    padding:10px;
+                }
+               .dtl tr td:first {
+                    font-weight: bold;
+                }
+                .maintbl {
+                    width:100%;
+                    border-bottom: 1px solid #DDD;
+                    margin:30px 0px;
+                }
+                .maintbl thead th {
+                    background-color: #EFEFEF;
+                    padding:10px 10px;
+                    border-radius:10px;
+                    font-size:0.9em;
+                }
+                .maintbl tbody td {
+                    padding:10px;
+                }
+                .maintbl .total {
+                    font-weight: bold;
+                }
+                .maintbl tr td {
+                    text-align: center;
+                }
+                .maintbl tr td:last {
+                    text-align: right;
+                }
+                .disclaimer {
+                    font-weight: bold;
+                    margin-top:20px;
+                    font-size:0.8em;
+                    font-style: italic;
+                }
+
+                .charts {
+    margin-top: 50px;
+    height: 300px;
+    display: flex;
+}
+
+.chartbox  {
+    /* width: 50%; */
+    position: relative;
+    padding: 10px;
+    /* height: 300px; */
+    margin:20px;
+    display:flex;
+    flex-direction: column;
+
+}
+.chartbox h3 {
+    font-weight: normal;
+    font-size:0.9em;
+}
+.chartbox .chart {
+    position: relative;
+    display:flex;
+    align-items: end;
+    display: flex;
+    flex-grow: 1;
+    
+
+}
+
+.bar {
+    width: 30px;
+    margin: 0px 20px;
+    height:100%;
+    font-size: 0.8em;
+    align-items: normal;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar .b {
+    background-color: #f28181;
+    flex-grow: 1;
+    width: 50px;
+    margin-bottom: -1px;
+}
+.water .bar .b {
+    background-color: #5e5e9f;
+}
+
+.chart::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #DDD;
+    position: absolute;
+    bottom: 29px;
+}
+
+.bar .lbl {
+    margin-top: 10px;
+}
+
+.bar .unit {
+    /* transform: rotate(45deg); */
+}
+        </style>
+        
+    </head>
+    <body>
+        <div class="header">
+            <div class="col">
+                <div>Issued on behalf of</div>
+                <div>{{parameters.tenantName}}</div>
+             
+            </div>
+            <div class="col right">
+                <img width="156" height="43" src="data:image/png;base64,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"/>
+                <div class="adr">
+                    <div>Authorized Agent</div>
+                    <div><b>C&amp;W Services (S) Pte. Ltd.</b></div>
+                    <div>Reg. No.: 199805375C </div>
+                    <div>750A Chai Chee Road</div>
+                    <div>#05-01 ESR BizPark @ Chai Chee</div>
+                    <div>Singapore 469001 </div>
+                    <div>www.cwservices.sg</div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="col">
+                <h1>Utilities Invoice</h1>
+                <table class="dtl">
+                    <tr>
+                        <td>Account No</td>
+                        <td>{{parameters.tenantID}}</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice No</td>
+                        <td>{{invoice_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice Date</td>
+                        <td class="invoice-date"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col right">
+                <div style="border:1px solid #EEE;padding:10px;">
+                    <div>For billing inquirires</div>
+                    <div>Telephone : +65 6354 4919</div>
+                    <div>Fax : +65 6876 6496</div>
+                    <div>Email : contactcentre-emrs.sgp@cwservices.com</div>
+                </div>
+            </div>
+        </div>
+        <table class="maintbl">
+            <thead>
+                <tr>
+                    <th class="summary">Summary of Charges</th>
+                    <th>Usage</th>
+                    <th>Rate ($)</th>
+                    <th>Total ($)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energy Consumption</td>
+                    <td class="econsumption">{{tags[0].consumption}}</td>
+                    <td class="erate">{{metadata.rates.energy}}</td>
+                    <td class="etotal">{{metadata.rates.energy}}</td>
+                </tr>
+                <tr>
+                    <td>Water Consumption</td>
+                    <td class="wconsumption">{{tags[1].consumption}}</td>
+                    <td class="wrate">{{metadata.rates.water}}</td>
+                    <td class="wtotal">{{metadata.rates.water}}</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td></td>
+                    <td class="tax">{{metadata.tax}}%</td>
+                 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Discount</td>
+                    <td></td>
+                    <td class="discount">{{discount}}%</td>
+                 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                 
+                    <td></td>
+                    <td class="total">${{total}}</td>
+                </tr>
+        
+            </tbody>
+        </table>
+        <div class="disclaimer">
+            The amount will be posted against your department's WBS by 4th week of each month. Please ensure available budget for successful deduction.
+        </div>
+        <div class="charts">
+            <div class="energy chartbox">
+                <h3>6 Months Energy Consumption (kwh)</h3>
+                <div class="chart">
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.7;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.6;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.9;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.4;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:1.0;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.7;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+            </div>
+            </div>
+            <div class="water chartbox">
+                <h3>6 Months Water Consumption (ltr)</h3>
+                <div class="chart">
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.7;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.6;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.9;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.4;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.1%;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+                <div class="bar" >
+                    <div class="b" style="flex-grow:0.7;"></div>
+                    <div class="lbl">Jan</div>
+                    <div class="unit">3222kwh</div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script>
+            function fmt(x) {
+                if (x < 100) return x.toFixed(2);
+                return x.toFixed(0);
+            }
+            var EnergyData = [
+                {"time":"2023-01-01","consumption":"19.11111"},
+                {"time":"2023-01-01","consumption":"99.11111"},
+                {"time":"2023-01-01","consumption":"19.11111"},
+                {"time":"2023-01-01","consumption":"29.11111"},
+                {"time":"2023-01-01","consumption":"19.11111"},
+                {"time":"2023-01-01","consumption":"39.11111"},
+                {"time":"2023-01-01","consumption":"19.11111"},
+                {"time":"2023-01-01","consumption":"59.11111"},
+            ].slice(0,6);
+            var WaterData = [
+                {"time":"2023-01-01","consumption":"89.11111"},
+                {"time":"2023-01-01","consumption":"49.11111"},
+               
+                {"time":"2023-01-01","consumption":"99.11111"},
+                {"time":"2023-01-01","consumption":"59.11111"},
+                {"time":"2023-01-01","consumption":"69.11111"},
+                {"time":"2023-01-01","consumption":"39.11111"},
+            ].slice(0,6);
+            try {
+                EnergyData = JSON.parse('{{parameters.energy}}').slice(0,6);
+            } catch {
+
+            }
+            try {
+                WaterData = JSON.parse('{{parameters.water}}').slice(0,6);
+            } catch {
+
+            }
+            var rates = null;
+            var tags = null;
+            var discount = Number('{{discount}}')||0;
+            var total = Number('{{total}}')||0;
+            var tax = Number('{{metadata.tax}}')||0;
+            var startDate = new Date('{{start}}');
+            var endDate = new Date('{{end}}');
+            try {
+                tags = JSON.parse('{{tags | json}}');
+                rates = JSON.parse('{{metadata.rates | json}}');
+
+            } catch {
+
+            }
+            function getMonthName(date) {
+                    const months = [
+                        "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
+
+                    const monthNumber = date.getMonth();
+                    return months[monthNumber];
+                }
+
+
+            if (tags && rates) {
+                let erate = rates.energy;
+                let econsumption = Number(tags.find((x)=>x.type=='energy')?.consumption || 0);
+                let wrate = rates.water;
+                let wconsumption = Number(tags.find((x)=>x.type=='energy')?.consumption || 0);
+                function setText(cls,v) {
+                    var el = document.querySelector('.'+cls);
+                    if (el) el.innerText = v;
+                }
+
+                setText('econsumption',econsumption.toFixed(2)+'kwh');
+                setText('erate',erate.toFixed(2));
+                setText('etotal','$' + (erate*econsumption).toFixed(2));
+                setText('wconsumption',wconsumption.toFixed(2)+'ltr');
+                setText('wrate',wrate.toFixed(2));
+                setText('wtotal','$' + (wrate*wconsumption).toFixed(2));
+                setText('discount',(discount*100).toFixed(2)+'%');
+                setText('tax',(tax*100).toFixed(2)+'%');
+                setText('total','$' + (total).toFixed(2));
+                setText('summary','Summary of Charges for ' + getMonthName(endDate));
+                setText('invoice-date',new Date().toDateString());
+
+
+            }
+            var e = document.querySelector('.chartbox.energy .chart');
+            e.innerHTML='';
+            let emax = EnergyData.reduce((p,a)=>Math.max(p,Number(a.consumption)),0);
+            var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            for(let item of EnergyData) {
+                var bar = document.createElement('div');
+                bar.classList.add('bar');
+                var b = document.createElement('div');
+                b.classList.add('b');
+                // b.style  = `flex-grow:${Number(item.consumption)/emax};`;
+                b.style.flexGrow = (Number(item.consumption)/emax)+'';
+                bar.append(b);
+                var lbl = document.createElement('div');
+                lbl.innerText = months[new Date(item.time).getMonth()]||'';
+                bar.append(lbl);
+                var unit = document.createElement('div');
+                unit.innerText = fmt(Number(item.consumption))+'kwh';
+                bar.append(unit);
+                e.append(bar);
+            }
+
+            var e = document.querySelector('.chartbox.water .chart');
+            e.innerHTML='';
+            let wmax = WaterData.reduce((p,a)=>Math.max(p,Number(a.consumption)),0);
+            for(let item of WaterData) {
+                var bar = document.createElement('div');
+                bar.classList.add('bar');
+                var b = document.createElement('div');
+                b.classList.add('b');
+                // b.style  = `flex-grow:${Number(item.consumption)/emax};`;
+                b.style.flexGrow = (Number(item.consumption)/wmax)+'';
+                bar.append(b);
+                var lbl = document.createElement('div');
+                lbl.innerText = months[new Date(item.time).getMonth()]||'';
+                bar.append(lbl);
+                var unit = document.createElement('div');
+                unit.innerText = fmt(Number(item.consumption))+'ltr';
+                bar.append(unit);
+                e.append(bar);
+            }
+        </script>
+    </body>
+</html>
