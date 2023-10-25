@@ -10,6 +10,13 @@
             "tags": []
         },
         {
+            "id": "offboarding_tenant",
+            "name": "Tenant Offboarding",
+            "description": "Tenant offboarding",
+            "icon": "",
+            "tags": []
+        },
+        {
             "id": "price-config",
             "name": "Tenant Utility Metering Configuration",
             "description": "This widget is for configuring various rates and parameters for tenant utility metering and billing",
