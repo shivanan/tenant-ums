@@ -10,9 +10,16 @@
             "tags": []
         },
         {
-            "id": "offboarding_tenant",
+            "id": "offboarding_tenants",
+            "name": "Tenants Offboarding",
+            "description": "List of offboarding tenants",
+            "icon": "",
+            "tags": []
+        },
+        {
+            "id": "offboard_tenant",
             "name": "Tenant Offboarding",
-            "description": "Tenant offboarding",
+            "description": "Offboard a tenant by admin",
             "icon": "",
             "tags": []
         },

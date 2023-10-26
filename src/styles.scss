@@ -1,4 +1,21 @@
 @import "common.scss";
+.offboard-tenant{
+    .uxp-button{
+        margin: 0;
+        float: right;
+        margin-right: 15px;
+    }
+}
+
+.offboard-modal {
+    .actions{
+        margin-top: 15px;
+    }
+    .uxp-button{
+        margin: 0;
+        float: right;
+    }
+}
 .tenants {
     position: relative;
     height: 85%;

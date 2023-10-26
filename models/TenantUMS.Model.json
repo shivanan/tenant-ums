@@ -441,7 +441,9 @@
             "parameters": [
               "initiatedUser",
               "intiatedDate",
-              "tenant"
+              "remarks",
+              "tenant",
+              "terminatedDate"
             ],
             "parametersExtended": [
               {
@@ -460,11 +462,23 @@
                 "dataType": "",
                 "docs": "",
                 "example": "",
+                "id": "remarks"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
                 "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "terminatedDate"
               }
             ],
             "published": false,
-            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}",
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
             "schemaFrozen": false,
             "static": true
           },
@@ -532,30 +546,49 @@
                 "inputs": [
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:initiatedUser",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:initiatedUser"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:initiatedUser"
                   },
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:intiatedDate",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:intiatedDate"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:intiatedDate"
+                  },
+                  {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:remarks",
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:remarks"
                   },
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:tenant",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:tenant"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:tenant"
+                  },
+                  {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:terminatedDate",
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:TerminatedDate"
                   },
                   {
                     "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:pendingDues"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:pendingDues"
                   }
                 ],
                 "outputs": [
                   {
-                    "source": "72cb4519-00ac-483f-88b4-023a13fc4a94:output:output",
+                    "source": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:output:output",
                     "target": "ca692621-ef3d-47e6-fe3f-bd8563814aa7:input:input"
                   }
                 ]
               },
-              "id": "72cb4519-00ac-483f-88b4-023a13fc4a94",
+              "id": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4",
               "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "TerminatedDate",
+                  "label": "TerminatedDate",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
                 {
                   "description": "",
                   "disablelog": "",
@@ -593,6 +626,17 @@
                   "description": "",
                   "disablelog": "",
                   "documentation": "",
+                  "id": "remarks",
+                  "label": "remarks",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
                   "id": "status",
                   "label": "status",
                   "transformation": "",
@@ -606,7 +650,7 @@
                   "documentation": "",
                   "id": "tenant",
                   "label": "tenant",
-                  "transformation": "text",
+                  "transformation": "",
                   "transformationOptions": "",
                   "type": "",
                   "value": ""
@@ -620,17 +664,6 @@
                   "transformation": "",
                   "transformationOptions": "",
                   "type": "",
-                  "value": ""
-                },
-                {
-                  "description": "Data to be inserted",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "__data__",
-                  "label": "Data",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "text",
                   "value": ""
                 }
               ],
@@ -655,8 +688,8 @@
                 }
               ],
               "position": {
-                "left": 529,
-                "top": 37
+                "left": 483,
+                "top": 65
               },
               "ReceiveIndividualFields": false,
               "surface": "OffboardTenant",
@@ -1578,6 +1611,15 @@
                   "example": "",
                   "id": "tenant",
                   "label": "tenant",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "Entire result",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
                   "type": ""
                 }
               ],
@@ -4629,7 +4671,7 @@
                 "outputs": [
                   {
                     "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:pendingDues"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:pendingDues"
                   }
                 ]
               },
@@ -4701,8 +4743,8 @@
                 }
               ],
               "position": {
-                "left": 288,
-                "top": 292
+                "left": 260,
+                "top": 339
               },
               "shouldCacheByUser": false,
               "shouldCacheErrorResults": false,
@@ -5328,19 +5370,27 @@
                 "outputs": [
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:initiatedUser",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:initiatedUser"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:initiatedUser"
                   },
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:intiatedDate",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:intiatedDate"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:intiatedDate"
+                  },
+                  {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:remarks",
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:remarks"
                   },
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:tenant",
-                    "target": "72cb4519-00ac-483f-88b4-023a13fc4a94:input:tenant"
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:tenant"
                   },
                   {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:tenant",
                     "target": "b51dc053-55e9-4d91-f5bc-2b844d250376:input:tenant"
+                  },
+                  {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:terminatedDate",
+                    "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:TerminatedDate"
                   }
                 ]
               },
@@ -5391,8 +5441,26 @@
                   "description": "",
                   "documentation": "",
                   "example": "",
+                  "id": "remarks",
+                  "label": "remarks",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
                   "id": "tenant",
                   "label": "tenant",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "terminatedDate",
+                  "label": "terminatedDate",
                   "type": ""
                 }
               ],
@@ -5403,7 +5471,7 @@
               "preProcessService": "",
               "published": false,
               "roles": [],
-              "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}",
+              "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
               "static": true,
               "surface": "OffboardTenant",
               "title": "Action",
@@ -7139,51 +7207,6 @@
               "connections": {
                 "inputs": [
                   {
-                    "source": "72cb4519-00ac-483f-88b4-023a13fc4a94:output:output",
-                    "target": "ca692621-ef3d-47e6-fe3f-bd8563814aa7:input:input"
-                  }
-                ],
-                "outputs": []
-              },
-              "fieldName": "",
-              "id": "ca692621-ef3d-47e6-fe3f-bd8563814aa7",
-              "inputValues": [
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "input",
-                  "label": "Value",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                },
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "trigger",
-                  "label": "Trigger",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                }
-              ],
-              "outputValues": [],
-              "position": {
-                "left": 866,
-                "top": 268
-              },
-              "surface": "OffboardTenant",
-              "title": "Output",
-              "type": "actionoutput2"
-            },
-            {
-              "connections": {
-                "inputs": [
-                  {
                     "source": "7fc38cc2-ade6-4bc6-9c53-86f190b1455e:output:output",
                     "target": "d24d5ab7-0725-42b8-95c0-c21666ef4b76:input:input"
                   }
@@ -7222,6 +7245,51 @@
                 "top": 196.7500114440918
               },
               "surface": "ApproveTenantOffboarding",
+              "title": "Output",
+              "type": "actionoutput2"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:output:output",
+                    "target": "ca692621-ef3d-47e6-fe3f-bd8563814aa7:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "ca692621-ef3d-47e6-fe3f-bd8563814aa7",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 806,
+                "top": 161
+              },
+              "surface": "OffboardTenant",
               "title": "Output",
               "type": "actionoutput2"
             },
@@ -8558,7 +8626,9 @@
             "parameters": [
               "initiatedUser",
               "intiatedDate",
-              "tenant"
+              "remarks",
+              "tenant",
+              "terminatedDate"
             ],
             "parametersExtended": [
               {
@@ -8577,11 +8647,23 @@
                 "dataType": "",
                 "docs": "",
                 "example": "",
+                "id": "remarks"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
                 "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "terminatedDate"
               }
             ],
             "published": false,
-            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}",
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
             "schemaFrozen": false,
             "static": true
           },
@@ -8666,7 +8748,7 @@
           "Name": "invoices"
         },
         {
-          "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"initiatedUser\",\"dataType\":\"string\"},{\"name\":\"intiatedDate\",\"dataType\":\"string\"},{\"name\":\"status\",\"dataType\":\"string\"},{\"name\":\"pendingDues\",\"dataType\":\"string\"}]",
+          "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"initiatedUser\",\"dataType\":\"string\"},{\"name\":\"intiatedDate\",\"dataType\":\"string\"},{\"name\":\"status\",\"dataType\":\"string\"},{\"name\":\"pendingDues\",\"dataType\":\"string\"},{\"name\":\"TerminatedDate\",\"dataType\":\"string\"},{\"name\":\"remarks\",\"dataType\":\"string\"}]",
           "GUID": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
           "MapKey": "97",
           "Name": "Tenantoffboarding"

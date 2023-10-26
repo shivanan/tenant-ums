@@ -6,6 +6,7 @@ import UMSTenant from "./UMSTenant";
 import { PriceConfig } from "./GlobalConfig";
 import { MyInvoices, TenantInvoices } from "./Invoices";
 import OffboardingTenants from "./OffboardingTenants";
+import OffboardTenant from "./OffboardTenant";
 
 
 
@@ -20,8 +21,18 @@ registerWidget({
 });
 
 registerWidget({
-    id: "offboarding_tenant",
+    id: "offboarding_tenants",
     widget: OffboardingTenants,
+    configs: {
+        layout: {
+     
+        }
+    }
+});
+
+registerWidget({
+    id: "offboard_tenant",
+    widget: OffboardTenant,
     configs: {
         layout: {
      

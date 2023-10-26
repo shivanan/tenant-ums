@@ -51,7 +51,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../images/water.svg 
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.id, ".tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}", ""]);
+exports.push([module.id, ".offboard-tenant .uxp-button {\n  margin: 0;\n  float: right;\n  margin-right: 15px;\n}\n\n.offboard-modal .actions {\n  margin-top: 15px;\n}\n.offboard-modal .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -998,6 +998,121 @@ exports.MyInvoices = MyInvoices;
 
 /***/ }),
 
+/***/ "./src/OffboardTenant.tsx":
+/*!********************************!*\
+  !*** ./src/OffboardTenant.tsx ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
+const OffboardTenant = (props) => {
+    const toast = (0, components_1.useToast)();
+    const [tenants, setTenants] = (0, react_1.useState)([]);
+    const [date, setDate] = (0, react_1.useState)(new Date());
+    const [remarks, setRemarks] = (0, react_1.useState)(null);
+    const [seletedTenant, setSelectedTenant] = (0, react_1.useState)(null);
+    (0, react_1.useEffect)(() => {
+        getTenants();
+    }, []);
+    function getTenants() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
+            const jsonObj = JSON.parse(res);
+            setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
+        });
+    }
+    ;
+    function getUserKey() {
+        const [_, v] = props.uxpContext.userKey.split('_');
+        return parseInt(v);
+    }
+    function offboardTenant() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const params = {
+                tenant: seletedTenant === null || seletedTenant === void 0 ? void 0 : seletedTenant.tenantID,
+                initiatedUser: getUserKey(),
+                intiatedDate: new Date().toISOString(),
+                terminatedDate: new Date(date).toISOString(),
+                remarks
+            };
+            try {
+                yield props.uxpContext.executeAction('TenantUMS', 'OffboardTenant', params);
+                toast.info("Termination request sent sucessfully!!!");
+            }
+            catch (err) {
+                toast.error("something went wrong");
+            }
+            setSelectedTenant('');
+        });
+    }
+    console.log("Selected tenant :", setSelectedTenant);
+    return (react_1.default.createElement(components_1.WidgetWrapper, null,
+        react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Tenants' }),
+        react_1.default.createElement(components_1.DataTable, { className: 'tenants offboard-tenant', data: tenants, pageSize: 5, activeClass: "active", columns: [
+                {
+                    title: "Name",
+                    width: "60%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, item === null || item === void 0 ? void 0 : item.tenantName)
+                },
+                {
+                    title: "",
+                    width: "40%",
+                    renderColumn: item => react_1.default.createElement(components_1.Button, { title: "Terminate", onClick: () => setSelectedTenant(item) })
+                },
+            ] }),
+        react_1.default.createElement(components_1.Modal, { className: "offboard-modal", title: "Offboard Tenant", show: seletedTenant, onClose: () => setSelectedTenant(null) },
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Select Date"),
+                    react_1.default.createElement(components_1.DatePicker, { title: "Date", date: date, onChange: (date) => setDate(date) }))),
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Remarks"),
+                    react_1.default.createElement(components_1.Input, { value: remarks, onChange: v => setRemarks(v) }))),
+            react_1.default.createElement("div", { className: "actions" },
+                react_1.default.createElement(components_1.AsyncButton, { title: "Submit", onClick: () => offboardTenant() })))));
+};
+exports["default"] = OffboardTenant;
+
+
+/***/ }),
+
 /***/ "./src/OffboardingTenants.tsx":
 /*!************************************!*\
   !*** ./src/OffboardingTenants.tsx ***!
@@ -1087,18 +1202,27 @@ const OffboardingTenants = (props) => {
         return (_a = record[0]) === null || _a === void 0 ? void 0 : _a.tenantName;
     }
     ;
+    function getDate(date) {
+        const dateString = `${new Date(date).getDate()}-${new Date(date).getMonth()}-${new Date(date).getFullYear()}`;
+        return dateString;
+    }
     return (react_1.default.createElement(components_1.WidgetWrapper, null,
         react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Tenants' }),
         react_1.default.createElement(components_1.DataTable, { className: 'tenants', data: offboardTenants, pageSize: 5, activeClass: "active", columns: [
                 {
                     title: "Name",
-                    width: "40%",
+                    width: "35%",
                     renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getLabelForTenant(item === null || item === void 0 ? void 0 : item.tenant))
                 },
                 {
                     title: "Due",
-                    width: "40%",
-                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, item === null || item === void 0 ? void 0 : item.pendingDues)
+                    width: "22.5%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, `S$${item === null || item === void 0 ? void 0 : item.pendingDues}`)
+                },
+                {
+                    title: "Termination Date",
+                    width: "22.5%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getDate(item === null || item === void 0 ? void 0 : item.TerminatedDate))
                 },
                 {
                     title: "",
@@ -1328,6 +1452,7 @@ const UMSTenant_1 = __importDefault(__webpack_require__(/*! ./UMSTenant */ "./sr
 const GlobalConfig_1 = __webpack_require__(/*! ./GlobalConfig */ "./src/GlobalConfig.tsx");
 const Invoices_1 = __webpack_require__(/*! ./Invoices */ "./src/Invoices.tsx");
 const OffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./OffboardingTenants */ "./src/OffboardingTenants.tsx"));
+const OffboardTenant_1 = __importDefault(__webpack_require__(/*! ./OffboardTenant */ "./src/OffboardTenant.tsx"));
 (0, uxp_1.registerWidget)({
     id: "ums_tenant",
     widget: UMSTenant_1.default,
@@ -1336,8 +1461,15 @@ const OffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./Offboardi
     }
 });
 (0, uxp_1.registerWidget)({
-    id: "offboarding_tenant",
+    id: "offboarding_tenants",
     widget: OffboardingTenants_1.default,
+    configs: {
+        layout: {}
+    }
+});
+(0, uxp_1.registerWidget)({
+    id: "offboard_tenant",
+    widget: OffboardTenant_1.default,
     configs: {
         layout: {}
     }
@@ -1558,7 +1690,7 @@ module.exports = UXPComponents;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"offboarding_tenant","name":"Tenant Offboarding","description":"Tenant offboarding","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
+module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"offboarding_tenants","name":"Tenants Offboarding","description":"List of offboarding tenants","icon":"","tags":[]},{"id":"offboard_tenant","name":"Tenant Offboarding","description":"Offboard a tenant by admin","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
 
 /***/ }),
 

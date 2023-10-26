@@ -49,6 +49,12 @@ const OffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
     return record[0]?.tenantName;
   };
 
+
+  function getDate(date: string) {
+    const dateString = `${new Date(date).getDate()}-${new Date(date).getMonth()}-${new Date(date).getFullYear()}`;
+    return dateString
+  }
+
   return (
     <WidgetWrapper>
       <TitleBar title='Offboarding Tenants'>
@@ -61,13 +67,18 @@ const OffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
         columns={[
           {
             title: "Name",
-            width: "40%",
+            width: "35%",
             renderColumn: item => <div className='data-table-item'>{getLabelForTenant(item?.tenant)}</div>
           },
           {
             title: "Due",
-            width: "40%",
-            renderColumn: item => <div className='data-table-item'>{item?.pendingDues}</div>
+            width: "22.5%",
+            renderColumn: item => <div className='data-table-item'>{`S$${item?.pendingDues}`}</div>
+          },
+          {
+            title: "Termination Date",
+            width: "22.5%",
+            renderColumn: item => <div className='data-table-item'>{getDate(item?.TerminatedDate)}</div>
           },
           {
             title: "",
