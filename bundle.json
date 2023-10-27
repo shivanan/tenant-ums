@@ -10,9 +10,9 @@
             "tags": []
         },
         {
-            "id": "offboarding_tenants",
-            "name": "Tenants Offboarding",
-            "description": "List of offboarding tenants",
+            "id": "approve_offboarding_tenants",
+            "name": "Approve Offboarding Tenants",
+            "description": "Approve Offboard request for a tenant",
             "icon": "",
             "tags": []
         },

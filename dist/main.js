@@ -579,6 +579,129 @@ module.exports = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
 
 /***/ }),
 
+/***/ "./src/ApproveOffboardingTenants.tsx":
+/*!*******************************************!*\
+  !*** ./src/ApproveOffboardingTenants.tsx ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
+const ApproveOffboardingTenants = (props) => {
+    const alerts = (0, components_1.useAlert)();
+    const [tenants, setTenants] = (0, react_1.useState)([]);
+    const [offboardTenants, setOffboardTenants] = (0, react_1.useState)([]);
+    (0, react_1.useEffect)(() => {
+        getTenants();
+        getOffboardTenants();
+    }, []);
+    function getTenants() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
+            const jsonObj = JSON.parse(res);
+            setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
+        });
+    }
+    ;
+    function getOffboardTenants() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
+            const jsonObj = JSON.parse(res);
+            setOffboardTenants(jsonObj);
+        });
+    }
+    ;
+    function approveOffboardTenant(item) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield alerts.confirm("Are you sure want to aproove this tenant offboarding?");
+            if (!res) {
+                return;
+            }
+            try {
+                const res = yield props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item === null || item === void 0 ? void 0 : item.tenant });
+            }
+            catch (err) {
+                console.log({ err });
+            }
+            getOffboardTenants();
+        });
+    }
+    ;
+    function getLabelForTenant(tenantId) {
+        var _a;
+        const record = tenants.filter(t => t.tenantID === tenantId);
+        return (_a = record[0]) === null || _a === void 0 ? void 0 : _a.tenantName;
+    }
+    ;
+    function getDate(date) {
+        const dateString = `${new Date(date).getDate()}-${new Date(date).getMonth()}-${new Date(date).getFullYear()}`;
+        return dateString;
+    }
+    return (react_1.default.createElement(components_1.WidgetWrapper, null,
+        react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Requests' }),
+        react_1.default.createElement(components_1.DataTable, { className: 'tenants', data: offboardTenants, pageSize: 5, activeClass: "active", columns: [
+                {
+                    title: "Name",
+                    width: "35%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getLabelForTenant(item === null || item === void 0 ? void 0 : item.tenant))
+                },
+                {
+                    title: "Due",
+                    width: "22.5%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, `S$${item === null || item === void 0 ? void 0 : item.pendingDues}`)
+                },
+                {
+                    title: "Termination Date",
+                    width: "22.5%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getDate(item === null || item === void 0 ? void 0 : item.TerminatedDate))
+                },
+                {
+                    title: "",
+                    width: "20%",
+                    renderColumn: item => react_1.default.createElement(components_1.AsyncButton, { title: "Approve", onClick: () => approveOffboardTenant(item) })
+                },
+            ] })));
+};
+exports["default"] = ApproveOffboardingTenants;
+
+
+/***/ }),
+
 /***/ "./src/GlobalConfig.tsx":
 /*!******************************!*\
   !*** ./src/GlobalConfig.tsx ***!
@@ -1113,129 +1236,6 @@ exports["default"] = OffboardTenant;
 
 /***/ }),
 
-/***/ "./src/OffboardingTenants.tsx":
-/*!************************************!*\
-  !*** ./src/OffboardingTenants.tsx ***!
-  \************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
-const OffboardingTenants = (props) => {
-    const alerts = (0, components_1.useAlert)();
-    const [tenants, setTenants] = (0, react_1.useState)([]);
-    const [offboardTenants, setOffboardTenants] = (0, react_1.useState)([]);
-    (0, react_1.useEffect)(() => {
-        getTenants();
-        getOffboardTenants();
-    }, []);
-    function getTenants() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
-            const jsonObj = JSON.parse(res);
-            setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
-        });
-    }
-    ;
-    function getOffboardTenants() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
-            const jsonObj = JSON.parse(res);
-            setOffboardTenants(jsonObj);
-        });
-    }
-    ;
-    function approveOffboardTenant(item) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const res = yield alerts.confirm("Are you sure want to aproove this tenant offboarding?");
-            if (!res) {
-                return;
-            }
-            try {
-                const res = yield props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item === null || item === void 0 ? void 0 : item.tenant });
-            }
-            catch (err) {
-                console.log({ err });
-            }
-            getOffboardTenants();
-        });
-    }
-    ;
-    function getLabelForTenant(tenantId) {
-        var _a;
-        const record = tenants.filter(t => t.tenantID === tenantId);
-        return (_a = record[0]) === null || _a === void 0 ? void 0 : _a.tenantName;
-    }
-    ;
-    function getDate(date) {
-        const dateString = `${new Date(date).getDate()}-${new Date(date).getMonth()}-${new Date(date).getFullYear()}`;
-        return dateString;
-    }
-    return (react_1.default.createElement(components_1.WidgetWrapper, null,
-        react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Tenants' }),
-        react_1.default.createElement(components_1.DataTable, { className: 'tenants', data: offboardTenants, pageSize: 5, activeClass: "active", columns: [
-                {
-                    title: "Name",
-                    width: "35%",
-                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getLabelForTenant(item === null || item === void 0 ? void 0 : item.tenant))
-                },
-                {
-                    title: "Due",
-                    width: "22.5%",
-                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, `S$${item === null || item === void 0 ? void 0 : item.pendingDues}`)
-                },
-                {
-                    title: "Termination Date",
-                    width: "22.5%",
-                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getDate(item === null || item === void 0 ? void 0 : item.TerminatedDate))
-                },
-                {
-                    title: "",
-                    width: "20%",
-                    renderColumn: item => react_1.default.createElement(components_1.AsyncButton, { title: "Approve", onClick: () => approveOffboardTenant(item) })
-                },
-            ] })));
-};
-exports["default"] = OffboardingTenants;
-
-
-/***/ }),
-
 /***/ "./src/UMSTenant.tsx":
 /*!***************************!*\
   !*** ./src/UMSTenant.tsx ***!
@@ -1451,8 +1451,8 @@ __webpack_require__(/*! ./styles.scss */ "./src/styles.scss");
 const UMSTenant_1 = __importDefault(__webpack_require__(/*! ./UMSTenant */ "./src/UMSTenant.tsx"));
 const GlobalConfig_1 = __webpack_require__(/*! ./GlobalConfig */ "./src/GlobalConfig.tsx");
 const Invoices_1 = __webpack_require__(/*! ./Invoices */ "./src/Invoices.tsx");
-const OffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./OffboardingTenants */ "./src/OffboardingTenants.tsx"));
 const OffboardTenant_1 = __importDefault(__webpack_require__(/*! ./OffboardTenant */ "./src/OffboardTenant.tsx"));
+const ApproveOffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./ApproveOffboardingTenants */ "./src/ApproveOffboardingTenants.tsx"));
 (0, uxp_1.registerWidget)({
     id: "ums_tenant",
     widget: UMSTenant_1.default,
@@ -1461,8 +1461,8 @@ const OffboardTenant_1 = __importDefault(__webpack_require__(/*! ./OffboardTenan
     }
 });
 (0, uxp_1.registerWidget)({
-    id: "offboarding_tenants",
-    widget: OffboardingTenants_1.default,
+    id: "approve_offboarding_tenants",
+    widget: ApproveOffboardingTenants_1.default,
     configs: {
         layout: {}
     }
@@ -1690,7 +1690,7 @@ module.exports = UXPComponents;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"offboarding_tenants","name":"Tenants Offboarding","description":"List of offboarding tenants","icon":"","tags":[]},{"id":"offboard_tenant","name":"Tenant Offboarding","description":"Offboard a tenant by admin","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
+module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"approve_offboarding_tenants","name":"Approve Offboarding Tenants","description":"Approve Offboard request for a tenant","icon":"","tags":[]},{"id":"offboard_tenant","name":"Tenant Offboarding","description":"Offboard a tenant by admin","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
 
 /***/ }),
 

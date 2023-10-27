@@ -5,8 +5,8 @@ import './styles.scss';
 import UMSTenant from "./UMSTenant";
 import { PriceConfig } from "./GlobalConfig";
 import { MyInvoices, TenantInvoices } from "./Invoices";
-import OffboardingTenants from "./OffboardingTenants";
 import OffboardTenant from "./OffboardTenant";
+import ApproveOffboardingTenants from "./ApproveOffboardingTenants";
 
 
 
@@ -21,8 +21,8 @@ registerWidget({
 });
 
 registerWidget({
-    id: "offboarding_tenants",
-    widget: OffboardingTenants,
+    id: "approve_offboarding_tenants",
+    widget: ApproveOffboardingTenants,
     configs: {
         layout: {
      

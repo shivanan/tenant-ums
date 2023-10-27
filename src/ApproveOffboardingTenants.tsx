@@ -8,7 +8,7 @@ interface IWidgetProps {
 }
 
 
-const OffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
+const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
   const alerts = useAlert();
   const [tenants, setTenants] = useState([]);
   const [offboardTenants, setOffboardTenants] = useState([]);
@@ -57,7 +57,7 @@ const OffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
 
   return (
     <WidgetWrapper>
-      <TitleBar title='Offboarding Tenants'>
+      <TitleBar title='Offboarding Requests'>
       </TitleBar>
       <DataTable
         className='tenants'
@@ -93,4 +93,4 @@ const OffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
   )
 }
 
-export default OffboardingTenants
+export default ApproveOffboardingTenants
