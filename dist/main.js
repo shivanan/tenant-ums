@@ -51,7 +51,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../images/water.svg 
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.id, ".offboard-tenant .uxp-button {\n  margin: 0;\n  float: right;\n  margin-right: 15px;\n}\n\n.offboard-modal .actions {\n  margin-top: 15px;\n}\n.offboard-modal .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}", ""]);
+exports.push([module.id, ".offboard-tenant .teminate-button {\n  margin: 0;\n  float: right;\n  margin-right: 15px;\n}\n\n.offboard-modal .actions {\n  margin-top: 15px;\n}\n.offboard-modal .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n.tenants .actions {\n  margin: 5px 0;\n}\n.tenants .reject-btn {\n  margin-top: 5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -628,7 +628,11 @@ const ApproveOffboardingTenants = (props) => {
     const [offboardTenants, setOffboardTenants] = (0, react_1.useState)([]);
     (0, react_1.useEffect)(() => {
         getTenants();
+    }, []);
+    (0, react_1.useEffect)(() => {
         getOffboardTenants();
+        const interval = setInterval(getOffboardTenants, 10000);
+        return () => clearInterval(interval);
     }, []);
     function getTenants() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -653,7 +657,23 @@ const ApproveOffboardingTenants = (props) => {
                 return;
             }
             try {
-                const res = yield props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item === null || item === void 0 ? void 0 : item.tenant });
+                yield props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item === null || item === void 0 ? void 0 : item.tenant });
+            }
+            catch (err) {
+                console.log({ err });
+            }
+            getOffboardTenants();
+        });
+    }
+    ;
+    function rejetOffboardTenant(item) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield alerts.confirm("Are you sure want to reject this tenant offboarding?");
+            if (!res) {
+                return;
+            }
+            try {
+                yield props.uxpContext.executeAction('TenantUMS', 'RejectOffboardingRequest', { id: item === null || item === void 0 ? void 0 : item._id });
             }
             catch (err) {
                 console.log({ err });
@@ -693,7 +713,9 @@ const ApproveOffboardingTenants = (props) => {
                 {
                     title: "",
                     width: "20%",
-                    renderColumn: item => react_1.default.createElement(components_1.AsyncButton, { title: "Approve", onClick: () => approveOffboardTenant(item) })
+                    renderColumn: item => react_1.default.createElement("div", { className: 'actions' },
+                        react_1.default.createElement(components_1.AsyncButton, { title: "Approve", onClick: () => approveOffboardTenant(item) }),
+                        react_1.default.createElement(components_1.AsyncButton, { title: "Reject", className: "reject-btn", onClick: () => rejetOffboardTenant(item) }))
                 },
             ] })));
 };
@@ -1170,8 +1192,14 @@ const OffboardTenant = (props) => {
     const [date, setDate] = (0, react_1.useState)(new Date());
     const [remarks, setRemarks] = (0, react_1.useState)(null);
     const [seletedTenant, setSelectedTenant] = (0, react_1.useState)(null);
+    const [offboardRequest, setOffboardRequest] = (0, react_1.useState)([]);
     (0, react_1.useEffect)(() => {
         getTenants();
+    }, []);
+    (0, react_1.useEffect)(() => {
+        getOffboardRequest();
+        const fetchInterval = setInterval(getOffboardRequest, 10000);
+        return () => clearInterval(fetchInterval);
     }, []);
     function getTenants() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -1179,6 +1207,22 @@ const OffboardTenant = (props) => {
             const jsonObj = JSON.parse(res);
             setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
         });
+    }
+    ;
+    function getOffboardRequest() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
+            const jsonObj = JSON.parse(res);
+            setOffboardRequest(jsonObj);
+        });
+    }
+    ;
+    function isRequestAlreadyThere(tenantId) {
+        const tenant = offboardRequest.find(request => request.tenant === tenantId);
+        if ((tenant === null || tenant === void 0 ? void 0 : tenant.status) === 'pending') {
+            return true;
+        }
+        return false;
     }
     ;
     function getUserKey() {
@@ -1204,7 +1248,6 @@ const OffboardTenant = (props) => {
             setSelectedTenant('');
         });
     }
-    console.log("Selected tenant :", setSelectedTenant);
     return (react_1.default.createElement(components_1.WidgetWrapper, null,
         react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Tenants' }),
         react_1.default.createElement(components_1.DataTable, { className: 'tenants offboard-tenant', data: tenants, pageSize: 5, activeClass: "active", columns: [
@@ -1216,7 +1259,11 @@ const OffboardTenant = (props) => {
                 {
                     title: "",
                     width: "40%",
-                    renderColumn: item => react_1.default.createElement(components_1.Button, { title: "Terminate", onClick: () => setSelectedTenant(item) })
+                    renderColumn: item => !isRequestAlreadyThere(item === null || item === void 0 ? void 0 : item.tenantID) ?
+                        react_1.default.createElement(components_1.Button, { title: "Terminate", className: "teminate-button", onClick: () => {
+                                setRemarks(null);
+                                setSelectedTenant(item);
+                            } }) : null
                 },
             ] }),
         react_1.default.createElement(components_1.Modal, { className: "offboard-modal", title: "Offboard Tenant", show: seletedTenant, onClose: () => setSelectedTenant(null) },
@@ -1227,7 +1274,7 @@ const OffboardTenant = (props) => {
             react_1.default.createElement("div", { className: "row" },
                 react_1.default.createElement("div", { className: "col" },
                     react_1.default.createElement(components_1.Label, null, "Remarks"),
-                    react_1.default.createElement(components_1.Input, { value: remarks, onChange: v => setRemarks(v) }))),
+                    react_1.default.createElement(components_1.TextArea, { value: remarks, onChange: v => setRemarks(v) }))),
             react_1.default.createElement("div", { className: "actions" },
                 react_1.default.createElement(components_1.AsyncButton, { title: "Submit", onClick: () => offboardTenant() })))));
 };

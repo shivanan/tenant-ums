@@ -15,8 +15,13 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
 
   useEffect(() => {
     getTenants();
-    getOffboardTenants();
   }, []);
+
+  useEffect(() => {
+    getOffboardTenants();
+    const interval = setInterval(getOffboardTenants, 10000);
+    return () => clearInterval(interval);
+  }, [])
 
   async function getTenants() {
     const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
@@ -37,7 +42,21 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
     }
 
     try {
-      const res = await props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item?.tenant });
+      await props.uxpContext.executeAction('TenantUMS', 'ApproveTenantOffboarding', { tenant: item?.tenant });
+    } catch (err) {
+      console.log({ err });
+    }
+    getOffboardTenants();
+  };
+
+  async function rejetOffboardTenant(item: any) {
+    const res = await alerts.confirm("Are you sure want to reject this tenant offboarding?");
+    if (!res) {
+      return;
+    }
+    
+    try {
+      await props.uxpContext.executeAction('TenantUMS', 'RejectOffboardingRequest', { id: item?._id });
     } catch (err) {
       console.log({ err });
     }
@@ -83,7 +102,10 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
           {
             title: "",
             width: "20%",
-            renderColumn: item => <AsyncButton title="Approve" onClick={() => approveOffboardTenant(item)} />
+            renderColumn: item => <div className='actions'>
+              <AsyncButton title="Approve" onClick={() => approveOffboardTenant(item)} />
+              <AsyncButton title="Reject" className="reject-btn" onClick={() => rejetOffboardTenant(item)} />
+            </div>
           },
 
         ]}

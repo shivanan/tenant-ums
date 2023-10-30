@@ -1,6 +1,6 @@
 @import "common.scss";
 .offboard-tenant{
-    .uxp-button{
+    .teminate-button{
         margin: 0;
         float: right;
         margin-right: 15px;
@@ -44,6 +44,13 @@
 
     .data-table-item {
         margin-left: 7.5px;
+    }
+
+    .actions{
+        margin: 5px 0;
+    }
+    .reject-btn{
+        margin-top: 5px;
     }
 }
 

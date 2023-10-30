@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AsyncButton, Button, DataTable, DatePicker, Input, Label, Modal, TitleBar, WidgetWrapper, useAlert, useToast } from "uxp/components";
+import { AsyncButton, Button, DataTable, DatePicker, Input, Label, Modal, TextArea, TitleBar, WidgetWrapper, useAlert, useToast } from "uxp/components";
 import { IContextProvider } from "./uxp";
 
 interface IWidgetProps {
@@ -13,16 +13,36 @@ const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     const [date, setDate] = useState(new Date());
     const [remarks, setRemarks] = useState(null);
     const [seletedTenant, setSelectedTenant] = useState(null);
+    const [offboardRequest, setOffboardRequest] = useState([]);
 
     useEffect(() => {
         getTenants();
-
     }, []);
+
+    useEffect(() => {
+        getOffboardRequest();
+        const fetchInterval = setInterval(getOffboardRequest, 10000);
+        return () => clearInterval(fetchInterval);
+    }, [])
 
     async function getTenants() {
         const res = await props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
         const jsonObj = JSON.parse(res);
         setTenants(jsonObj?.tenants);
+    };
+
+    async function getOffboardRequest() {
+        const res = await props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
+        const jsonObj = JSON.parse(res);
+        setOffboardRequest(jsonObj);
+    };
+
+    function isRequestAlreadyThere(tenantId: string) {
+        const tenant = offboardRequest.find(request => request.tenant === tenantId);
+        if (tenant?.status === 'pending') {
+            return true;
+        }
+        return false;
     };
 
     function getUserKey() {
@@ -48,9 +68,6 @@ const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
         setSelectedTenant('');
     }
 
-    console.log("Selected tenant :", setSelectedTenant);
-
-
     return (
         <WidgetWrapper>
             <TitleBar title='Offboarding Tenants'>
@@ -69,7 +86,13 @@ const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                     {
                         title: "",
                         width: "40%",
-                        renderColumn: item => <Button title="Terminate" onClick={() => setSelectedTenant(item)} />
+                        renderColumn: item =>
+                            !isRequestAlreadyThere(item?.tenantID) ?
+                                <Button title="Terminate" className="teminate-button" onClick={() => {
+                                    setRemarks(null);
+                                    setSelectedTenant(item);
+                                }} /> : null
+
                     },
 
                 ]}
@@ -88,7 +111,7 @@ const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
                 <div className="row">
                     <div className="col">
                         <Label>Remarks</Label>
-                        <Input value={remarks} onChange={v => setRemarks(v)} />
+                        <TextArea value={remarks} onChange={v => setRemarks(v)} />
                     </div>
                 </div>
 

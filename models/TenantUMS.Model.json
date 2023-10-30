@@ -487,6 +487,31 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "RejectOffboardingRequest",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "id"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "id"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "SaveGlobalSettings",
             "outputs": [],
             "parameters": [
@@ -665,6 +690,17 @@
                   "transformationOptions": "",
                   "type": "",
                   "value": ""
+                },
+                {
+                  "description": "Data to be inserted",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "__data__",
+                  "label": "Data",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "text",
+                  "value": ""
                 }
               ],
               "outputValues": [
@@ -698,6 +734,157 @@
               "type": "modelcollections:insertone",
               "UpdateAsAttributes": true,
               "UseContentAwareAutoFill": false
+            },
+            {
+              "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"_id\",\"Operator\":\"eq\",\"Value\":\"id\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "6ac0afb4-a6a2-48d0-8f40-255106946297:output:id",
+                    "target": "2c035801-6694-43ea-bc39-2ae2ae5558b3:input:id"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "2c035801-6694-43ea-bc39-2ae2ae5558b3:output:output",
+                    "target": "461d4f37-d055-427e-c570-02845de8d7f6:input:input"
+                  }
+                ]
+              },
+              "id": "2c035801-6694-43ea-bc39-2ae2ae5558b3",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "TerminatedDate",
+                  "label": "TerminatedDate",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "id",
+                  "label": "id",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "initiatedUser",
+                  "label": "initiatedUser",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "intiatedDate",
+                  "label": "intiatedDate",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "pendingDues",
+                  "label": "pendingDues",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "remarks",
+                  "label": "remarks",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "status",
+                  "label": "status",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": "rejected"
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 320,
+                "top": 91
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "RejectOffboardingRequest",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Update one document",
+              "type": "modelcollections:updateone",
+              "UpdateAsAttributes": true
             },
             {
               "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
@@ -5478,6 +5665,66 @@
               "type": "actionstart"
             },
             {
+              "actionName": "RejectOffboardingRequest",
+              "canOverrideCredentials": false,
+              "capability": "",
+              "connections": {
+                "inputs": [],
+                "outputs": [
+                  {
+                    "source": "6ac0afb4-a6a2-48d0-8f40-255106946297:output:id",
+                    "target": "2c035801-6694-43ea-bc39-2ae2ae5558b3:input:id"
+                  }
+                ]
+              },
+              "debug": false,
+              "docs": "",
+              "id": "6ac0afb4-a6a2-48d0-8f40-255106946297",
+              "initiate": false,
+              "inputValues": [],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "id",
+                  "label": "id",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 60,
+                "top": 60
+              },
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
+              "static": true,
+              "surface": "RejectOffboardingRequest",
+              "title": "Action",
+              "type": "actionstart"
+            },
+            {
               "actionName": "SaveGlobalSettings",
               "canOverrideCredentials": false,
               "capability": "",
@@ -6857,6 +7104,51 @@
               "surface": "SaveGlobalSettings",
               "title": "Merge Data",
               "type": "mergedata"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "2c035801-6694-43ea-bc39-2ae2ae5558b3:output:output",
+                    "target": "461d4f37-d055-427e-c570-02845de8d7f6:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "461d4f37-d055-427e-c570-02845de8d7f6",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 581,
+                "top": 180
+              },
+              "surface": "RejectOffboardingRequest",
+              "title": "Output",
+              "type": "actionoutput2"
             },
             {
               "connections": {
@@ -8664,6 +8956,31 @@
             ],
             "published": false,
             "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
+            "name": "RejectOffboardingRequest",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "id"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "id"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
             "schemaFrozen": false,
             "static": true
           },
