@@ -1143,10 +1143,10 @@ exports.MyInvoices = MyInvoices;
 
 /***/ }),
 
-/***/ "./src/OffboardTenant.tsx":
-/*!********************************!*\
-  !*** ./src/OffboardTenant.tsx ***!
-  \********************************/
+/***/ "./src/TenantDetails.tsx":
+/*!*******************************!*\
+  !*** ./src/TenantDetails.tsx ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -1186,7 +1186,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
-const OffboardTenant = (props) => {
+const TenantDetails = (props) => {
     var _a, _b, _c, _d, _e, _f, _g, _h;
     const toast = (0, components_1.useToast)();
     const [details, setDetails] = (0, react_1.useState)([]);
@@ -1435,7 +1435,7 @@ const OffboardTenant = (props) => {
             react_1.default.createElement("div", { className: "actions" },
                 react_1.default.createElement(components_1.AsyncButton, { title: "Submit", onClick: () => offboardTenant() })))));
 };
-exports["default"] = OffboardTenant;
+exports["default"] = TenantDetails;
 
 
 /***/ }),
@@ -1655,8 +1655,8 @@ __webpack_require__(/*! ./styles.scss */ "./src/styles.scss");
 const UMSTenant_1 = __importDefault(__webpack_require__(/*! ./UMSTenant */ "./src/UMSTenant.tsx"));
 const GlobalConfig_1 = __webpack_require__(/*! ./GlobalConfig */ "./src/GlobalConfig.tsx");
 const Invoices_1 = __webpack_require__(/*! ./Invoices */ "./src/Invoices.tsx");
-const OffboardTenant_1 = __importDefault(__webpack_require__(/*! ./OffboardTenant */ "./src/OffboardTenant.tsx"));
 const ApproveOffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./ApproveOffboardingTenants */ "./src/ApproveOffboardingTenants.tsx"));
+const TenantDetails_1 = __importDefault(__webpack_require__(/*! ./TenantDetails */ "./src/TenantDetails.tsx"));
 (0, uxp_1.registerWidget)({
     id: "ums_tenant",
     widget: UMSTenant_1.default,
@@ -1672,8 +1672,8 @@ const ApproveOffboardingTenants_1 = __importDefault(__webpack_require__(/*! ./Ap
     }
 });
 (0, uxp_1.registerWidget)({
-    id: "offboard_tenant",
-    widget: OffboardTenant_1.default,
+    id: "tenant_details",
+    widget: TenantDetails_1.default,
     configs: {
         layout: {}
     }
@@ -1894,7 +1894,7 @@ module.exports = UXPComponents;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"approve_offboarding_tenants","name":"Approve Offboarding Tenants","description":"Approve Offboard request for a tenant","icon":"","tags":[]},{"id":"offboard_tenant","name":"Tenant Offboarding","description":"Offboard a tenant by admin","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
+module.exports = JSON.parse('{"id":"dece8055-b3de-42ec-b596-8ffa8fd0a794","author":"eutech","widgets":[{"id":"ums_tenant","name":"Tenant Meter Configuration","description":"Assign meters to tenants","icon":"","tags":[]},{"id":"approve_offboarding_tenants","name":"Approve Offboarding Tenants","description":"Approve Offboard request for a tenant","icon":"","tags":[]},{"id":"tenant_details","name":"Tenant Details","description":"This widget will show tenant registration details","icon":"","tags":[]},{"id":"price-config","name":"Tenant Utility Metering Configuration","description":"This widget is for configuring various rates and parameters for tenant utility metering and billing","icon":"","tags":[]},{"id":"invoices","name":"Tenant Utility  Invoices","description":"A list of invoices that have been generated","icon":"","tags":[]},{"id":"my-invoices","name":"My Utility  Invoices","description":"A list of invoices for the tenant that I am a part of","icon":"","tags":[]}],"sidebarLinks":[],"uis":[],"menuItems":[]}');
 
 /***/ }),
 

@@ -17,9 +17,9 @@
             "tags": []
         },
         {
-            "id": "offboard_tenant",
-            "name": "Tenant Offboarding",
-            "description": "Offboard a tenant by admin",
+            "id": "tenant_details",
+            "name": "Tenant Details",
+            "description": "This widget will show tenant registration details",
             "icon": "",
             "tags": []
         },

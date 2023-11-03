@@ -7,7 +7,7 @@ interface IWidgetProps {
     instanceId?: string
 }
 
-const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
+const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
     const toast = useToast();
     const [details, setDetails] = useState([]);
     const [tenants, setTenants] = useState([]);
@@ -320,4 +320,4 @@ const OffboardTenant: React.FunctionComponent<IWidgetProps> = (props) => {
     )
 }
 
-export default OffboardTenant
+export default TenantDetails;
