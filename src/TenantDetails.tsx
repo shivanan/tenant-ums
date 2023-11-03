@@ -7,6 +7,25 @@ interface IWidgetProps {
     instanceId?: string
 }
 
+const empty_tenant_details = {
+    department: '',
+    wbsno: '',
+    gfa: '',
+    deposit: '',
+    billingRecipientContact: {
+        name: '',
+        email: '',
+        phone: '',
+        address: ''
+    },
+    pointOfContact: {
+        name: '',
+        email: '',
+        phone: '',
+        address: ''
+    },
+}
+
 const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
     const toast = useToast();
     const [details, setDetails] = useState([]);
@@ -19,24 +38,7 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
     const [edit, setEdit] = useState(false);
     const [terminate, setTerminate] = useState(false);
 
-    const [selectedTenantDetails, setSelectedTenantDetails] = useState({
-        department: '',
-        wbsno: '',
-        gfa: '',
-        deposit: '',
-        billingRecipientContact: {
-            name: '',
-            email: '',
-            phone: '',
-            address: ''
-        },
-        pointOfContact: {
-            name: '',
-            email: '',
-            phone: '',
-            address: ''
-        }
-    });
+    const [selectedTenantDetails, setSelectedTenantDetails] = useState(empty_tenant_details);
 
     useEffect(() => {
         getTenants();
@@ -69,7 +71,8 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
 
     function isRequestAlreadyThere(tenantId: string) {
         const tenant = offboardRequest.find(request => request.tenant === tenantId);
-        if (tenant?.status === 'pending') {
+        
+        if (tenant?.status === 'pending' || tenant?.status === 'approved') {
             return true;
         }
         return false;
@@ -101,10 +104,19 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
     }
 
     function handleEdit(item: any) {
+        console.log("Item", item.tenantID);
+
         setEdit(true);
         setSelectedTenant(item);
         const record = details.filter(d => d?.tenant === item.tenantID);
-        setSelectedTenantDetails(record[0]);
+        if (!record[0]) return
+        const { department, wbsno, gfa, deposit, billingRecipientContact, pointOfContact } = record[0];
+        const tenantDetails = {
+            department, wbsno, gfa, deposit,
+            pointOfContact: pointOfContact[0],
+            billingRecipientContact: billingRecipientContact[0],
+        }
+        setSelectedTenantDetails(tenantDetails);
     }
 
     function getTenantField(tenantID: string, field: string) {
@@ -121,6 +133,7 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
     };
 
     function handleDetailsChange(field: string, value: any, subField?: string) {
+
         let updated;
         if (!subField) {
             updated = {
@@ -130,10 +143,10 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
         } else {
             const { billingRecipientContact, pointOfContact } = selectedTenantDetails;
             let fieldValues;
-            if(field === 'billingRecipientContact') {
+            if (field === 'billingRecipientContact') {
                 fieldValues = billingRecipientContact
             };
-            if(field === "pointOfContact") {
+            if (field === "pointOfContact") {
                 fieldValues = pointOfContact
             }
 
@@ -153,18 +166,17 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
         const { department, wbsno, gfa, deposit, billingRecipientContact, pointOfContact } = selectedTenantDetails;
 
         if (record.length === 0) {
-            console.log("New User");                
             const params = {
                 tenant: seletedTenant.tenantID,
                 department, wbsno, gfa, deposit,
-                billingRecipientContact: [billingRecipientContact],
-                pointOfContact: [pointOfContact]
+                pointOfContact: [{ ...pointOfContact }],
+                billingRecipientContact: [{ ...billingRecipientContact }],
             };
-            
+
             try {
-                await props.uxpContext.executeAction('TenantUMS', 'AddTenantDetails', params);
+                await props.uxpContext.executeAction('TenantUMS', 'AddTenantDetails', { ...params });
                 toast.info("Tenant details added sucessfulyy!!!!");
-                
+
             } catch (err) {
                 toast.error(err)
             }
@@ -182,6 +194,7 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
         }
         setEdit(false);
         getTenantsDetails();
+        setSelectedTenantDetails(empty_tenant_details);
 
     }
 
@@ -229,7 +242,14 @@ const TenantDetails: React.FunctionComponent<IWidgetProps> = (props) => {
                 ]}
             />
 
-            <Modal className="edit-tenant-details" title="Edit Tenant Details" show={edit} onClose={() => setEdit(false)}>
+            <Modal
+                show={edit}
+                className="edit-tenant-details"
+                title="Edit Tenant Details"
+                onClose={() => {
+                    setEdit(false);
+                    setSelectedTenantDetails(empty_tenant_details)
+                }}>
                 <div className="row">
                     <div className="col">
                         <Label className="main">Department</Label>

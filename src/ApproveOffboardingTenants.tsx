@@ -11,7 +11,7 @@ interface IWidgetProps {
 const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props) => {
   const alerts = useAlert();
   const [tenants, setTenants] = useState([]);
-  const [offboardTenants, setOffboardTenants] = useState([]);
+  const [offboardRequests, setOffboardRequests] = useState([]);
 
   useEffect(() => {
     getTenants();
@@ -32,7 +32,7 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
   async function getOffboardTenants() {
     const res = await props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
     const jsonObj = JSON.parse(res);
-    setOffboardTenants(jsonObj);
+    setOffboardRequests(jsonObj);
   };
 
   async function approveOffboardTenant(item: any) {
@@ -54,7 +54,7 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
     if (!res) {
       return;
     }
-    
+
     try {
       await props.uxpContext.executeAction('TenantUMS', 'RejectOffboardingRequest', { id: item?._id });
     } catch (err) {
@@ -74,13 +74,18 @@ const ApproveOffboardingTenants: React.FunctionComponent<IWidgetProps> = (props)
     return dateString
   }
 
+  function filtereData() {
+    const pendingRequests = offboardRequests.filter(r => r.status === 'pending');
+    return pendingRequests;
+  }
+
   return (
     <WidgetWrapper>
       <TitleBar title='Offboarding Requests'>
       </TitleBar>
       <DataTable
         className='tenants'
-        data={offboardTenants}
+        data={filtereData()}
         pageSize={5}
         activeClass="active"
         columns={[

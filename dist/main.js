@@ -625,7 +625,7 @@ const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components")
 const ApproveOffboardingTenants = (props) => {
     const alerts = (0, components_1.useAlert)();
     const [tenants, setTenants] = (0, react_1.useState)([]);
-    const [offboardTenants, setOffboardTenants] = (0, react_1.useState)([]);
+    const [offboardRequests, setOffboardRequests] = (0, react_1.useState)([]);
     (0, react_1.useEffect)(() => {
         getTenants();
     }, []);
@@ -646,7 +646,7 @@ const ApproveOffboardingTenants = (props) => {
         return __awaiter(this, void 0, void 0, function* () {
             const res = yield props.uxpContext.executeAction('TenantUMS', 'GetOffboardingItems', {});
             const jsonObj = JSON.parse(res);
-            setOffboardTenants(jsonObj);
+            setOffboardRequests(jsonObj);
         });
     }
     ;
@@ -692,9 +692,13 @@ const ApproveOffboardingTenants = (props) => {
         const dateString = `${new Date(date).getDate()}-${new Date(date).getMonth()}-${new Date(date).getFullYear()}`;
         return dateString;
     }
+    function filtereData() {
+        const pendingRequests = offboardRequests.filter(r => r.status === 'pending');
+        return pendingRequests;
+    }
     return (react_1.default.createElement(components_1.WidgetWrapper, null,
         react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Requests' }),
-        react_1.default.createElement(components_1.DataTable, { className: 'tenants', data: offboardTenants, pageSize: 5, activeClass: "active", columns: [
+        react_1.default.createElement(components_1.DataTable, { className: 'tenants', data: filtereData(), pageSize: 5, activeClass: "active", columns: [
                 {
                     title: "Name",
                     width: "35%",
@@ -1186,6 +1190,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
+const empty_tenant_details = {
+    department: '',
+    wbsno: '',
+    gfa: '',
+    deposit: '',
+    billingRecipientContact: {
+        name: '',
+        email: '',
+        phone: '',
+        address: ''
+    },
+    pointOfContact: {
+        name: '',
+        email: '',
+        phone: '',
+        address: ''
+    },
+};
 const TenantDetails = (props) => {
     var _a, _b, _c, _d, _e, _f, _g, _h;
     const toast = (0, components_1.useToast)();
@@ -1197,24 +1219,7 @@ const TenantDetails = (props) => {
     const [offboardRequest, setOffboardRequest] = (0, react_1.useState)([]);
     const [edit, setEdit] = (0, react_1.useState)(false);
     const [terminate, setTerminate] = (0, react_1.useState)(false);
-    const [selectedTenantDetails, setSelectedTenantDetails] = (0, react_1.useState)({
-        department: '',
-        wbsno: '',
-        gfa: '',
-        deposit: '',
-        billingRecipientContact: {
-            name: '',
-            email: '',
-            phone: '',
-            address: ''
-        },
-        pointOfContact: {
-            name: '',
-            email: '',
-            phone: '',
-            address: ''
-        }
-    });
+    const [selectedTenantDetails, setSelectedTenantDetails] = (0, react_1.useState)(empty_tenant_details);
     (0, react_1.useEffect)(() => {
         getTenants();
         getTenantsDetails();
@@ -1250,7 +1255,7 @@ const TenantDetails = (props) => {
     ;
     function isRequestAlreadyThere(tenantId) {
         const tenant = offboardRequest.find(request => request.tenant === tenantId);
-        if ((tenant === null || tenant === void 0 ? void 0 : tenant.status) === 'pending') {
+        if ((tenant === null || tenant === void 0 ? void 0 : tenant.status) === 'pending' || (tenant === null || tenant === void 0 ? void 0 : tenant.status) === 'approved') {
             return true;
         }
         return false;
@@ -1281,10 +1286,19 @@ const TenantDetails = (props) => {
         });
     }
     function handleEdit(item) {
+        console.log("Item", item.tenantID);
         setEdit(true);
         setSelectedTenant(item);
         const record = details.filter(d => (d === null || d === void 0 ? void 0 : d.tenant) === item.tenantID);
-        setSelectedTenantDetails(record[0]);
+        if (!record[0])
+            return;
+        const { department, wbsno, gfa, deposit, billingRecipientContact, pointOfContact } = record[0];
+        const tenantDetails = {
+            department, wbsno, gfa, deposit,
+            pointOfContact: pointOfContact[0],
+            billingRecipientContact: billingRecipientContact[0],
+        };
+        setSelectedTenantDetails(tenantDetails);
     }
     function getTenantField(tenantID, field) {
         var _a, _b, _c, _d;
@@ -1322,15 +1336,14 @@ const TenantDetails = (props) => {
             const record = details.filter(d => (d === null || d === void 0 ? void 0 : d.tenant) === seletedTenant.tenantID);
             const { department, wbsno, gfa, deposit, billingRecipientContact, pointOfContact } = selectedTenantDetails;
             if (record.length === 0) {
-                console.log("New User");
                 const params = {
                     tenant: seletedTenant.tenantID,
                     department, wbsno, gfa, deposit,
-                    billingRecipientContact: [billingRecipientContact],
-                    pointOfContact: [pointOfContact]
+                    pointOfContact: [Object.assign({}, pointOfContact)],
+                    billingRecipientContact: [Object.assign({}, billingRecipientContact)],
                 };
                 try {
-                    yield props.uxpContext.executeAction('TenantUMS', 'AddTenantDetails', params);
+                    yield props.uxpContext.executeAction('TenantUMS', 'AddTenantDetails', Object.assign({}, params));
                     toast.info("Tenant details added sucessfulyy!!!!");
                 }
                 catch (err) {
@@ -1349,6 +1362,7 @@ const TenantDetails = (props) => {
             }
             setEdit(false);
             getTenantsDetails();
+            setSelectedTenantDetails(empty_tenant_details);
         });
     }
     return (react_1.default.createElement(components_1.WidgetWrapper, null,
@@ -1382,7 +1396,10 @@ const TenantDetails = (props) => {
                                 } }) : null)
                 },
             ] }),
-        react_1.default.createElement(components_1.Modal, { className: "edit-tenant-details", title: "Edit Tenant Details", show: edit, onClose: () => setEdit(false) },
+        react_1.default.createElement(components_1.Modal, { show: edit, className: "edit-tenant-details", title: "Edit Tenant Details", onClose: () => {
+                setEdit(false);
+                setSelectedTenantDetails(empty_tenant_details);
+            } },
             react_1.default.createElement("div", { className: "row" },
                 react_1.default.createElement("div", { className: "col" },
                     react_1.default.createElement(components_1.Label, { className: "main" }, "Department"),

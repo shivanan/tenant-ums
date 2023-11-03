@@ -451,7 +451,7 @@
             "parameters": [],
             "parametersExtended": [],
             "published": false,
-            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}}",
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}}",
             "schemaFrozen": false,
             "static": true
           },
@@ -874,8 +874,8 @@
                 }
               ],
               "position": {
-                "left": 446,
-                "top": 22
+                "left": 682.8526088169643,
+                "top": 61.993299211774556
               },
               "ReceiveIndividualFields": false,
               "surface": "OffboardTenant",
@@ -884,6 +884,69 @@
               "type": "modelcollections:insertone",
               "UpdateAsAttributes": true,
               "UseContentAwareAutoFill": false
+            },
+            {
+              "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "f3b3750e-37b8-4ee4-e6c1-a10aa641c886:output:output",
+                    "target": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910:input:trigger"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910:output:output",
+                    "target": "f4b40312-1c1c-4bab-ab81-95de506888ca:input:input"
+                  }
+                ]
+              },
+              "id": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 691.5714372907366,
+                "top": 455.5714198521206
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "GetOffboardingItems",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find all documents",
+              "type": "modelcollections:findall",
+              "UpdateAsAttributes": false
             },
             {
               "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
@@ -1049,69 +1112,6 @@
             },
             {
               "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
-              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"status\",\"Operator\":\"eq\",\"Value\":\"pending\",\"IsPin\":false}],\"Groups\":[]}]",
-              "connections": {
-                "inputs": [
-                  {
-                    "source": "f3b3750e-37b8-4ee4-e6c1-a10aa641c886:output:output",
-                    "target": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910:input:trigger"
-                  }
-                ],
-                "outputs": [
-                  {
-                    "source": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910:output:output",
-                    "target": "f4b40312-1c1c-4bab-ab81-95de506888ca:input:input"
-                  }
-                ]
-              },
-              "id": "6c7ce3f4-298c-4ddc-ec41-214a1fcf4910",
-              "inputValues": [
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "trigger",
-                  "label": "Trigger",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                }
-              ],
-              "outputValues": [
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "__error__",
-                  "label": "Error",
-                  "type": "error"
-                },
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "output",
-                  "label": "All Output",
-                  "type": ""
-                }
-              ],
-              "position": {
-                "left": 420.99826388888886,
-                "top": 172.10762871636285
-              },
-              "ReceiveIndividualFields": false,
-              "surface": "GetOffboardingItems",
-              "TakeFilterFromPin": false,
-              "timeout": 5000,
-              "title": "Find all documents",
-              "type": "modelcollections:findall",
-              "UpdateAsAttributes": false
-            },
-            {
-              "CollectionName": "62ba58ee-6e48-4e22-8508-9660d4040fb2",
               "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
               "connections": {
                 "inputs": [
@@ -1223,8 +1223,8 @@
                 }
               ],
               "position": {
-                "left": 316.7500305175781,
-                "top": 342.2500228881836
+                "left": 338.99326869419644,
+                "top": 453.99331229073664
               },
               "ReceiveIndividualFields": false,
               "surface": "ApproveTenantOffboarding",
@@ -1283,7 +1283,7 @@
                   "documentation": "",
                   "id": "billingRecipientContact",
                   "label": "billingRecipientContact",
-                  "transformation": "",
+                  "transformation": "json",
                   "transformationOptions": "",
                   "type": "",
                   "value": ""
@@ -1327,7 +1327,7 @@
                   "documentation": "",
                   "id": "pointOfContact",
                   "label": "pointOfContact",
-                  "transformation": "",
+                  "transformation": "json",
                   "transformationOptions": "",
                   "type": "",
                   "value": ""
@@ -1586,6 +1586,15 @@
                   "id": "wbsno",
                   "label": "wbsno",
                   "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "Entire result",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
                 }
               ],
               "position": {
@@ -1594,6 +1603,154 @@
               },
               "ReceiveIndividualFields": true,
               "surface": "GetRemaningAmount",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find one document",
+              "type": "modelcollections:findone",
+              "UpdateAsAttributes": false
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "1b0c9fed-1ed2-4cab-c829-e53d99d9b3d9:output:tenant",
+                    "target": "cefc87a0-4e20-4eaf-f925-19ec4e39f3b0:input:tenant"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "cefc87a0-4e20-4eaf-f925-19ec4e39f3b0:output:output",
+                    "target": "abca7325-d974-49bf-ee48-1924edacd21d:input:tenantDetails"
+                  }
+                ]
+              },
+              "id": "cefc87a0-4e20-4eaf-f925-19ec4e39f3b0",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 661.8526785714287,
+                "top": 608.5714285714286
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "ApproveTenantOffboarding",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find one document",
+              "type": "modelcollections:findone",
+              "UpdateAsAttributes": false
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:tenant",
+                    "target": "ba2ee8cb-2f14-47b8-8db8-7b4f7b4cae0d:input:tenant"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "ba2ee8cb-2f14-47b8-8db8-7b4f7b4cae0d:output:output",
+                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:tenantDetails"
+                  }
+                ]
+              },
+              "id": "ba2ee8cb-2f14-47b8-8db8-7b4f7b4cae0d",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 680.1339285714287,
+                "top": 591.8526785714286
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "OffboardTenant",
               "TakeFilterFromPin": false,
               "timeout": 5000,
               "title": "Find one document",
@@ -1729,6 +1886,17 @@
                   "transformation": "",
                   "transformationOptions": "",
                   "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "Data to be inserted",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "__data__",
+                  "label": "Data",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "text",
                   "value": ""
                 }
               ],
@@ -2490,6 +2658,15 @@
                   "id": "tenant",
                   "label": "tenant",
                   "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "Entire result",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
                 }
               ],
               "position": {
@@ -3238,8 +3415,8 @@
                 }
               ],
               "position": {
-                "left": 1077.750015258789,
-                "top": 107.25000381469727
+                "left": 970.4151262555804,
+                "top": 82.27455139160156
               },
               "ReceiveIndividualFields": false,
               "surface": "ApproveTenantOffboarding",
@@ -3548,8 +3725,8 @@
                 }
               ],
               "position": {
-                "left": 861.25,
-                "top": 402.5
+                "left": 904.8526436941964,
+                "top": 383.99331229073664
               },
               "published": false,
               "roles": [],
@@ -3801,6 +3978,10 @@
                   {
                     "source": "1b0c9fed-1ed2-4cab-c829-e53d99d9b3d9:output:tenant",
                     "target": "7fc38cc2-ade6-4bc6-9c53-86f190b1455e:input:tenant"
+                  },
+                  {
+                    "source": "1b0c9fed-1ed2-4cab-c829-e53d99d9b3d9:output:tenant",
+                    "target": "cefc87a0-4e20-4eaf-f925-19ec4e39f3b0:input:tenant"
                   }
                 ]
               },
@@ -3839,8 +4020,8 @@
                 }
               ],
               "position": {
-                "left": 45.54513719346788,
-                "top": 179.54513549804688
+                "left": 32.71205357142858,
+                "top": 243.85266985212056
               },
               "preProcessService": "",
               "published": false,
@@ -5653,13 +5834,13 @@
                 }
               ],
               "position": {
-                "left": 149.88888210720486,
-                "top": 133.21701049804688
+                "left": 398.13393729073664,
+                "top": 416.8526785714286
               },
               "preProcessService": "",
               "published": false,
               "roles": [],
-              "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}}",
+              "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}}",
               "static": true,
               "surface": "GetOffboardingItems",
               "title": "Action",
@@ -5758,8 +5939,8 @@
                 }
               ],
               "position": {
-                "left": 263.10763888888886,
-                "top": 394.88888210720484
+                "left": 472.9932948521206,
+                "top": 430.8526611328125
               },
               "shouldCacheByUser": false,
               "shouldCacheErrorResults": false,
@@ -6361,6 +6542,10 @@
                     "target": "b51dc053-55e9-4d91-f5bc-2b844d250376:input:tenant"
                   },
                   {
+                    "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:tenant",
+                    "target": "ba2ee8cb-2f14-47b8-8db8-7b4f7b4cae0d:input:tenant"
+                  },
+                  {
                     "source": "49aca85a-ad37-40ce-bd41-f1b7f7f72dea:output:terminatedDate",
                     "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:TerminatedDate"
                   }
@@ -6437,8 +6622,8 @@
                 }
               ],
               "position": {
-                "left": 60,
-                "top": 60
+                "left": 117.99329485212054,
+                "top": 164.8526872907366
               },
               "preProcessService": "",
               "published": false,
@@ -6737,8 +6922,8 @@
                 }
               ],
               "position": {
-                "left": 1164.000015258789,
-                "top": 421.50001525878906
+                "left": 1193.5714285714287,
+                "top": 361.57139369419644
               },
               "shouldCacheByUser": false,
               "shouldCacheErrorResults": false,
@@ -7487,103 +7672,6 @@
               "type": "es6javascript"
             },
             {
-              "code": "const amountLeft = runtime.inputs().remainingAmount;\r\n\r\nconst email = 'niranga@ecyber.com';\r\nconst subject = 'Offboarding Details';\r\nconst message = `We will verify your offboarding request and you have left ${amountLeft} in your deposit`;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    tenantEmail: email\r\n})\r\n\r\n\r\n",
-              "connections": {
-                "inputs": [
-                  {
-                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
-                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:remainingAmount"
-                  }
-                ],
-                "outputs": [
-                  {
-                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:message",
-                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Message"
-                  },
-                  {
-                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:subject",
-                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Subject"
-                  },
-                  {
-                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:tenantEmail",
-                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Email"
-                  }
-                ]
-              },
-              "description": "",
-              "id": "ae4dc712-1dae-4faf-e798-e548bd15f7ac",
-              "inputValues": [
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "remainingAmount",
-                  "label": "remainingAmount",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                },
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "trigger",
-                  "label": "Trigger",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                }
-              ],
-              "outputValues": [
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "__error__",
-                  "label": "Error",
-                  "type": "error"
-                },
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "message",
-                  "label": "message",
-                  "type": ""
-                },
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "subject",
-                  "label": "subject",
-                  "type": ""
-                },
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
-                  "id": "tenantEmail",
-                  "label": "tenantEmail",
-                  "type": ""
-                }
-              ],
-              "position": {
-                "left": 746.888902452257,
-                "top": 473.88888888888886
-              },
-              "surface": "OffboardTenant",
-              "timeoutMilliseconds": 5000,
-              "title": "ES6Javascript",
-              "type": "es6javascript"
-            },
-            {
               "code": "const amountLeft = runtime.inputs().remainingAmount;\r\n\r\nconst email = 'niranga@ecyber.com';\r\nconst subject = 'Offboarding Request';\r\nconst message = `New offboarding request from tenant and he has left amount ${amountLeft} in deposit: `;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    adminEmail: email\r\n})\r\n\r\n\r\n",
               "connections": {
                 "inputs": [
@@ -7672,8 +7760,8 @@
                 }
               ],
               "position": {
-                "left": 745.8888753255209,
-                "top": 247.88886176215277
+                "left": 1010.4151262555804,
+                "top": 250.57141985212056
               },
               "surface": "OffboardTenant",
               "timeoutMilliseconds": 5000,
@@ -7833,6 +7921,215 @@
                 "top": 118.57142857142858
               },
               "surface": "AddMeter",
+              "timeoutMilliseconds": 5000,
+              "title": "ES6Javascript",
+              "type": "es6javascript"
+            },
+            {
+              "code": "const tenantDetails = runtime.inputs().tenantDetails;\r\n\r\nconst subject = 'Offboarding';\r\nconst message = `You hae offboarded successfully!!!!!`;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    tenantEmail: tenantDetails.pointOfContact[0].email\r\n})\r\n\r\n\r\n",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "cefc87a0-4e20-4eaf-f925-19ec4e39f3b0:output:output",
+                    "target": "abca7325-d974-49bf-ee48-1924edacd21d:input:tenantDetails"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:message",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Message"
+                  },
+                  {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:subject",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Subject"
+                  },
+                  {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:tenantEmail",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Email"
+                  }
+                ]
+              },
+              "description": "",
+              "id": "abca7325-d974-49bf-ee48-1924edacd21d",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenantDetails",
+                  "label": "tenantDetails",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "message",
+                  "label": "message",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "subject",
+                  "label": "subject",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenantEmail",
+                  "label": "tenantEmail",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 952.5714983258929,
+                "top": 613.5714285714286
+              },
+              "surface": "ApproveTenantOffboarding",
+              "timeoutMilliseconds": 5000,
+              "title": "ES6Javascript",
+              "type": "es6javascript"
+            },
+            {
+              "code": "const tenantDetails = runtime.inputs().tenantDetails;\r\nconst amountLeft = runtime.inputs().remainingAmount;\r\n\r\nconst subject = 'Offboarding Details';\r\nconst message = `We will verify your offboarding request and you have left ${amountLeft} in your deposit`;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    tenantEmail: tenantDetails.pointOfContact[0].email\r\n})\r\n\r\n\r\n",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
+                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:remainingAmount"
+                  },
+                  {
+                    "source": "ba2ee8cb-2f14-47b8-8db8-7b4f7b4cae0d:output:output",
+                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:tenantDetails"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:message",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Message"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:subject",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Subject"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:tenantEmail",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Email"
+                  }
+                ]
+              },
+              "description": "",
+              "id": "ae4dc712-1dae-4faf-e798-e548bd15f7ac",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "remainingAmount",
+                  "label": "remainingAmount",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenantDetails",
+                  "label": "tenantDetails",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "message",
+                  "label": "message",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "subject",
+                  "label": "subject",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenantEmail",
+                  "label": "tenantEmail",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 1010.5713762555804,
+                "top": 488.5714285714286
+              },
+              "surface": "OffboardTenant",
               "timeoutMilliseconds": 5000,
               "title": "ES6Javascript",
               "type": "es6javascript"
@@ -8095,8 +8392,8 @@
                 }
               ],
               "position": {
-                "left": 650.5000305175781,
-                "top": 294.2500305175781
+                "left": 707.7120535714287,
+                "top": 260.71204049246654
               },
               "sequential": true,
               "surface": "ApproveTenantOffboarding",
@@ -8550,8 +8847,8 @@
                 }
               ],
               "position": {
-                "left": 1036.6544596354167,
-                "top": 235.21701388888889
+                "left": 1414.4151088169644,
+                "top": 247.13391985212056
               },
               "surface": "OffboardTenant",
               "title": "SendEmail",
@@ -8689,8 +8986,8 @@
               ],
               "outputValues": [],
               "position": {
-                "left": 658.763902452257,
-                "top": 210.99826388888889
+                "left": 1022.8526960100447,
+                "top": 510.5714198521206
               },
               "surface": "GetOffboardingItems",
               "title": "Legacy Output",
@@ -8824,8 +9121,8 @@
               ],
               "outputValues": [],
               "position": {
-                "left": 753,
-                "top": 44
+                "left": 971.1339460100447,
+                "top": 52.13391985212054
               },
               "surface": "OffboardTenant",
               "title": "Output",
@@ -8941,6 +9238,90 @@
               "connections": {
                 "inputs": [
                   {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:message",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Message"
+                  },
+                  {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:subject",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Subject"
+                  },
+                  {
+                    "source": "abca7325-d974-49bf-ee48-1924edacd21d:output:tenantEmail",
+                    "target": "c74a3841-7e56-4116-c0b0-cace5a69a773:input:Email"
+                  }
+                ],
+                "outputs": []
+              },
+              "id": "c74a3841-7e56-4116-c0b0-cace5a69a773",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Email",
+                  "label": "Email",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Message",
+                  "label": "Message",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Subject",
+                  "label": "Subject",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 1491.7119489397323,
+                "top": 596.2745448521206
+              },
+              "surface": "ApproveTenantOffboarding",
+              "title": "SendEmail",
+              "type": "objectaction:System:SendEmail"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
                     "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:message",
                     "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Message"
                   },
@@ -9014,8 +9395,8 @@
                 }
               ],
               "position": {
-                "left": 1078.545193142361,
-                "top": 469.10763210720484
+                "left": 1444.2745535714287,
+                "top": 502.8526524135045
               },
               "surface": "OffboardTenant",
               "title": "SendEmail",
@@ -10348,7 +10729,7 @@
             "parameters": [],
             "parametersExtended": [],
             "published": false,
-            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\"]}}",
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}}",
             "schemaFrozen": false,
             "static": true
           },
