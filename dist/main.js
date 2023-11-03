@@ -51,7 +51,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../images/water.svg 
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.id, ".offboard-tenant .teminate-button {\n  margin: 0;\n  float: right;\n  margin-right: 15px;\n}\n\n.offboard-modal .actions {\n  margin-top: 15px;\n}\n.offboard-modal .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n.tenants .actions {\n  margin: 5px 0;\n}\n.tenants .reject-btn {\n  margin-top: 5px;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}", ""]);
+exports.push([module.id, ".offboard-modal .actions {\n  margin-top: 15px;\n}\n.offboard-modal .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tenants {\n  position: relative;\n  height: 85%;\n  width: 100%;\n  padding: 0px 0px 0 0px;\n}\n.tenants .data-list {\n  border: 1px solid #e3e3e3;\n}\n.tenants .data-list .data-table thead tr th {\n  padding-left: 15px;\n  text-align: left;\n  background: #e3e3e3;\n}\n.tenants .data-list .data-list-item {\n  height: 50px;\n}\n.tenants .data-list .data-list-item.active {\n  background-color: #FAFAFA !important;\n}\n.tenants .data-list-footer {\n  position: unset;\n}\n.tenants .data-table-item {\n  margin-left: 7.5px;\n}\n.tenants .actions {\n  margin: 5px 0;\n}\n.tenants .reject-btn {\n  margin-top: 5px;\n}\n\n.offboard-tenant .actions {\n  margin: 5px 0;\n  display: flex;\n  gap: 5px;\n}\n.offboard-tenant .actions .uxp-button {\n  margin: 0;\n  float: left;\n}\n\n.add-meter {\n  display: flex;\n}\n.add-meter .tenant-name {\n  display: flex;\n  margin-bottom: 15px;\n}\n.add-meter .tenant-name .label {\n  width: 60px;\n  font-weight: 700;\n}\n.add-meter .row {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.add-meter .row .col {\n  width: 48%;\n}\n.add-meter .row .col .uxp-form-label {\n  font-weight: 500;\n}\n.add-meter .delete-meter {\n  margin-top: 45px;\n}\n.add-meter .error {\n  color: red;\n  margin: 15px 0;\n  padding: 5px;\n}\n.add-meter .actions {\n  margin: 15px 0;\n}\n.add-meter .actions .uxp-button {\n  margin: 0;\n  float: right;\n}\n\n.tu-meters {\n  display: flex;\n  font-size: 10px;\n  color: white;\n  flex-wrap: wrap;\n}\n.tu-meters.energy .tu-meter-id {\n  background-color: rgb(245, 129, 129);\n}\n.tu-meters.energy .tu-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.tu-meters.water .tu-meter-id {\n  background-color: #00a8ff;\n}\n.tu-meters.water .tu-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.tu-meters .tu-meter-id {\n  padding: 5px 8px;\n  display: flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.tu-meters .tu-meter-id .tu-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.tu-meters .tu-meter-id .tu-txt {\n  margin-left: 5px;\n}\n\n.utility-pill {\n  padding: 5px 8px;\n  display: inline-flex;\n  border-radius: 8px;\n  align-items: center;\n  color: white;\n  margin: 2px;\n}\n.utility-pill .up-logo {\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  width: 20px;\n  height: 20px;\n}\n.utility-pill .up-txt {\n  margin-left: 5px;\n}\n.utility-pill.energy {\n  background-color: rgb(245, 129, 129);\n}\n.utility-pill.energy .up-logo {\n  filter: invert(1);\n  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMC44NDgiIGhlaWdodD0iMzAuODQ5IiB2aWV3Qm94PSIwIDAgMzAuODQ4IDMwLjg0OSI+CiAgPHBhdGggaWQ9Ikljb25fbWV0cm8tcG93ZXIiIGRhdGEtbmFtZT0iSWNvbiBtZXRyby1wb3dlciIgZD0iTTE0LjEzOSwxLjkyOCwyLjU3MSwxNy4zNTJIMTQuMTM5TDYuNDI3LDMyLjc3NywzMy40MTksMTMuNUgxNy45OTVMMjkuNTYzLDEuOTI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIuNTcxIC0xLjkyOCkiLz4KPC9zdmc+Cg==);\n}\n.utility-pill.water {\n  background-color: #00a8ff;\n}\n.utility-pill.water .up-logo {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n.edit-tenant-details .main {\n  font-weight: 600;\n}\n.edit-tenant-details .multi {\n  padding: 0;\n  margin: 0;\n  margin-top: 20px;\n}\n.edit-tenant-details .row {\n  display: flex;\n  gap: 10px;\n}\n.edit-tenant-details .row .col {\n  width: 100%;\n}\n.edit-tenant-details .actions {\n  margin: 10px 0;\n}\n.edit-tenant-details .actions .uxp-button {\n  margin: 0;\n  float: right;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -1187,14 +1187,37 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const components_1 = __webpack_require__(/*! uxp/components */ "uxp/components");
 const OffboardTenant = (props) => {
+    var _a, _b, _c, _d, _e, _f, _g, _h;
     const toast = (0, components_1.useToast)();
+    const [details, setDetails] = (0, react_1.useState)([]);
     const [tenants, setTenants] = (0, react_1.useState)([]);
     const [date, setDate] = (0, react_1.useState)(new Date());
     const [remarks, setRemarks] = (0, react_1.useState)(null);
     const [seletedTenant, setSelectedTenant] = (0, react_1.useState)(null);
     const [offboardRequest, setOffboardRequest] = (0, react_1.useState)([]);
+    const [edit, setEdit] = (0, react_1.useState)(false);
+    const [terminate, setTerminate] = (0, react_1.useState)(false);
+    const [selectedTenantDetails, setSelectedTenantDetails] = (0, react_1.useState)({
+        department: '',
+        wbsno: '',
+        gfa: '',
+        deposit: '',
+        billingRecipientContact: {
+            name: '',
+            email: '',
+            phone: '',
+            address: ''
+        },
+        pointOfContact: {
+            name: '',
+            email: '',
+            phone: '',
+            address: ''
+        }
+    });
     (0, react_1.useEffect)(() => {
         getTenants();
+        getTenantsDetails();
     }, []);
     (0, react_1.useEffect)(() => {
         getOffboardRequest();
@@ -1206,6 +1229,14 @@ const OffboardTenant = (props) => {
             const res = yield props.uxpContext.executeAction('TenantUMS', 'GetAllTenants', {});
             const jsonObj = JSON.parse(res);
             setTenants(jsonObj === null || jsonObj === void 0 ? void 0 : jsonObj.tenants);
+        });
+    }
+    ;
+    function getTenantsDetails() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const res = yield props.uxpContext.executeAction('TenantUMS', 'GetTenantDetails', {});
+            const jsonObj = JSON.parse(res);
+            setDetails(jsonObj);
         });
     }
     ;
@@ -1245,28 +1276,154 @@ const OffboardTenant = (props) => {
             catch (err) {
                 toast.error("something went wrong");
             }
+            setTerminate(false);
             setSelectedTenant('');
         });
     }
+    function handleEdit(item) {
+        setEdit(true);
+        setSelectedTenant(item);
+        const record = details.filter(d => (d === null || d === void 0 ? void 0 : d.tenant) === item.tenantID);
+        setSelectedTenantDetails(record[0]);
+    }
+    function getTenantField(tenantID, field) {
+        var _a, _b, _c, _d;
+        const tenant = details.filter(d => (d === null || d === void 0 ? void 0 : d.tenant) === tenantID);
+        if (field === 'department') {
+            return ((_a = tenant[0]) === null || _a === void 0 ? void 0 : _a.department) ? (_b = tenant[0]) === null || _b === void 0 ? void 0 : _b.department : "Not available";
+        }
+        if (field === 'deposit') {
+            return ((_c = tenant[0]) === null || _c === void 0 ? void 0 : _c.deposit) ? `S$${((_d = tenant[0]) === null || _d === void 0 ? void 0 : _d.deposit)}` : "Not available";
+        }
+    }
+    ;
+    function handleDetailsChange(field, value, subField) {
+        let updated;
+        if (!subField) {
+            updated = Object.assign(Object.assign({}, selectedTenantDetails), { [field]: value });
+        }
+        else {
+            const { billingRecipientContact, pointOfContact } = selectedTenantDetails;
+            let fieldValues;
+            if (field === 'billingRecipientContact') {
+                fieldValues = billingRecipientContact;
+            }
+            ;
+            if (field === "pointOfContact") {
+                fieldValues = pointOfContact;
+            }
+            updated = Object.assign(Object.assign({}, selectedTenantDetails), { [field]: Object.assign(Object.assign({}, fieldValues), { [subField]: value }) });
+        }
+        setSelectedTenantDetails(updated);
+    }
+    ;
+    function handleSubmitDetails() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const record = details.filter(d => (d === null || d === void 0 ? void 0 : d.tenant) === seletedTenant.tenantID);
+            const { department, wbsno, gfa, deposit, billingRecipientContact, pointOfContact } = selectedTenantDetails;
+            if (record.length === 0) {
+                console.log("New User");
+                const params = {
+                    tenant: seletedTenant.tenantID,
+                    department, wbsno, gfa, deposit,
+                    billingRecipientContact: [billingRecipientContact],
+                    pointOfContact: [pointOfContact]
+                };
+                try {
+                    yield props.uxpContext.executeAction('TenantUMS', 'AddTenantDetails', params);
+                    toast.info("Tenant details added sucessfulyy!!!!");
+                }
+                catch (err) {
+                    toast.error(err);
+                }
+            }
+            else {
+                const params = {
+                    tenant: seletedTenant.tenantID,
+                    department, wbsno, gfa, deposit,
+                    billingRecipientContact: [billingRecipientContact],
+                    pointOfContact: [pointOfContact]
+                };
+                yield props.uxpContext.executeAction('TenantUMS', 'UpdateTenantDetails', params);
+                toast.info("Tenant details updated sucessfulyy!!!!");
+            }
+            setEdit(false);
+            getTenantsDetails();
+        });
+    }
     return (react_1.default.createElement(components_1.WidgetWrapper, null,
-        react_1.default.createElement(components_1.TitleBar, { title: 'Offboarding Tenants' }),
+        react_1.default.createElement(components_1.TitleBar, { title: 'Tenants Details' }),
         react_1.default.createElement(components_1.DataTable, { className: 'tenants offboard-tenant', data: tenants, pageSize: 5, activeClass: "active", columns: [
                 {
                     title: "Name",
-                    width: "60%",
+                    width: "30%",
                     renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, item === null || item === void 0 ? void 0 : item.tenantName)
                 },
                 {
+                    title: "Department",
+                    width: "25%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getTenantField(item === null || item === void 0 ? void 0 : item.tenantID, "department"))
+                },
+                {
+                    title: "Deposit",
+                    width: "25%",
+                    renderColumn: item => react_1.default.createElement("div", { className: 'data-table-item' }, getTenantField(item === null || item === void 0 ? void 0 : item.tenantID, "deposit"))
+                },
+                {
                     title: "",
-                    width: "40%",
-                    renderColumn: item => !isRequestAlreadyThere(item === null || item === void 0 ? void 0 : item.tenantID) ?
-                        react_1.default.createElement(components_1.Button, { title: "Terminate", className: "teminate-button", onClick: () => {
-                                setRemarks(null);
-                                setSelectedTenant(item);
-                            } }) : null
+                    width: "20%",
+                    renderColumn: item => react_1.default.createElement("div", { className: "actions" },
+                        react_1.default.createElement(components_1.Button, { title: "Edit", className: "edit-button", onClick: () => handleEdit(item) }),
+                        !isRequestAlreadyThere(item === null || item === void 0 ? void 0 : item.tenantID) ?
+                            react_1.default.createElement(components_1.Button, { title: "Terminate", className: "teminate-button", onClick: () => {
+                                    setTerminate(true);
+                                    setRemarks(null);
+                                    setSelectedTenant(item);
+                                } }) : null)
                 },
             ] }),
-        react_1.default.createElement(components_1.Modal, { className: "offboard-modal", title: "Offboard Tenant", show: seletedTenant, onClose: () => setSelectedTenant(null) },
+        react_1.default.createElement(components_1.Modal, { className: "edit-tenant-details", title: "Edit Tenant Details", show: edit, onClose: () => setEdit(false) },
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, { className: "main" }, "Department"),
+                    react_1.default.createElement(components_1.Input, { value: selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.department, onChange: v => handleDetailsChange("department", v) })),
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, { className: "main" }, "WBS No"),
+                    react_1.default.createElement(components_1.Input, { value: selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.wbsno, onChange: v => handleDetailsChange("wbsno", v) }))),
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, { className: "main" }, "Gross Floor Area "),
+                    react_1.default.createElement(components_1.Input, { value: selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.gfa, onChange: v => handleDetailsChange("gfa", v) })),
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, { className: "main" }, "Deposit"),
+                    react_1.default.createElement(components_1.Input, { type: "number", value: selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.deposit, onChange: v => handleDetailsChange("deposit", v) }))),
+            react_1.default.createElement(components_1.Label, { className: "main multi" }, "Point of Contact (POC)"),
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Name "),
+                    react_1.default.createElement(components_1.Input, { value: (_a = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.pointOfContact) === null || _a === void 0 ? void 0 : _a.name, onChange: v => handleDetailsChange("pointOfContact", v, "name") }),
+                    react_1.default.createElement(components_1.Label, null, "Phone"),
+                    react_1.default.createElement(components_1.Input, { value: (_b = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.pointOfContact) === null || _b === void 0 ? void 0 : _b.phone, onChange: v => handleDetailsChange("pointOfContact", v, "phone") })),
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Email"),
+                    react_1.default.createElement(components_1.Input, { value: (_c = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.pointOfContact) === null || _c === void 0 ? void 0 : _c.email, onChange: v => handleDetailsChange("pointOfContact", v, "email") }),
+                    react_1.default.createElement(components_1.Label, null, "Address"),
+                    react_1.default.createElement(components_1.Input, { value: (_d = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.pointOfContact) === null || _d === void 0 ? void 0 : _d.address, onChange: v => handleDetailsChange("pointOfContact", v, "address") }))),
+            react_1.default.createElement(components_1.Label, { className: "main multi" }, "Billing Recipient Contact(BRC)"),
+            react_1.default.createElement("div", { className: "row" },
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Name "),
+                    react_1.default.createElement(components_1.Input, { value: (_e = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.billingRecipientContact) === null || _e === void 0 ? void 0 : _e.name, onChange: v => handleDetailsChange("billingRecipientContact", v, "name") }),
+                    react_1.default.createElement(components_1.Label, null, "Phone"),
+                    react_1.default.createElement(components_1.Input, { value: (_f = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.billingRecipientContact) === null || _f === void 0 ? void 0 : _f.phone, onChange: v => handleDetailsChange("billingRecipientContact", v, "phone") })),
+                react_1.default.createElement("div", { className: "col" },
+                    react_1.default.createElement(components_1.Label, null, "Email"),
+                    react_1.default.createElement(components_1.Input, { value: (_g = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.billingRecipientContact) === null || _g === void 0 ? void 0 : _g.email, onChange: v => handleDetailsChange("billingRecipientContact", v, "email") }),
+                    react_1.default.createElement(components_1.Label, null, "Address"),
+                    react_1.default.createElement(components_1.Input, { value: (_h = selectedTenantDetails === null || selectedTenantDetails === void 0 ? void 0 : selectedTenantDetails.billingRecipientContact) === null || _h === void 0 ? void 0 : _h.address, onChange: v => handleDetailsChange("billingRecipientContact", v, "address") }))),
+            react_1.default.createElement("div", { className: "actions" },
+                react_1.default.createElement(components_1.AsyncButton, { title: "Submit", onClick: () => handleSubmitDetails() }))),
+        react_1.default.createElement(components_1.Modal, { className: "offboard-modal", title: "Offboard Tenant", show: terminate, onClose: () => { setSelectedTenant(null); setTerminate(false); } },
             react_1.default.createElement("div", { className: "row" },
                 react_1.default.createElement("div", { className: "col" },
                     react_1.default.createElement(components_1.Label, null, "Select Date"),

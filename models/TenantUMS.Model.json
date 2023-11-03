@@ -55,6 +55,73 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "AddTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "billingRecipientContact",
+              "department",
+              "deposit",
+              "gfa",
+              "pointOfContact",
+              "tenant",
+              "wbsno"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "billingRecipientContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "department"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "deposit"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "gfa"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "pointOfContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "wbsno"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"Department\":{\"type\":\"string\"},\"Wbsno\":{\"type\":\"string\"},\"GFA\":{\"type\":\"string\"},\"PointOfContact\":{\"type\":\"string\"},\"BillingRecipientContact\":{\"type\":\"string\"},\"Deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"Department\",\"Wbsno\",\"GFA\",\"PointOfContact\",\"BillingRecipientContact\",\"Deposit\"]}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "ApproveTenantOffboarding",
             "outputs": [
               ""
@@ -418,6 +485,22 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "GetTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [],
+            "parametersExtended": [],
+            "published": false,
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"department\":{\"type\":\"string\"},\"wbsno\":{\"type\":\"string\"},\"gfa\":{\"type\":\"string\"},\"pointOfContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"billingRecipientContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"department\",\"wbsno\",\"gfa\",\"pointOfContact\",\"billingRecipientContact\",\"deposit\"]}}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "GetTenantTags",
             "outputs": [
               ""
@@ -478,7 +561,7 @@
               }
             ],
             "published": false,
-            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}",
             "schemaFrozen": false,
             "static": true
           },
@@ -557,6 +640,73 @@
             ],
             "published": false,
             "schema": "",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
+            "name": "UpdateTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "billingRecipientContact",
+              "department",
+              "deposit",
+              "gfa",
+              "pointOfContact",
+              "tenant",
+              "wbsno"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "billingRecipientContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "department"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "deposit"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "gfa"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "pointOfContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "wbsno"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
             "schemaFrozen": false,
             "static": true
           }
@@ -724,8 +874,8 @@
                 }
               ],
               "position": {
-                "left": 483,
-                "top": 65
+                "left": 446,
+                "top": 22
               },
               "ReceiveIndividualFields": false,
               "surface": "OffboardTenant",
@@ -851,6 +1001,17 @@
                   "transformation": "",
                   "transformationOptions": "",
                   "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "Data to be inserted",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "__data__",
+                  "label": "Data",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "text",
                   "value": ""
                 }
               ],
@@ -1067,6 +1228,536 @@
               },
               "ReceiveIndividualFields": false,
               "surface": "ApproveTenantOffboarding",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Update one document",
+              "type": "modelcollections:updateone",
+              "UpdateAsAttributes": true
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:billingRecipientContact",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:billingRecipientContact"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:department",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:department"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:deposit",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:deposit"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:gfa",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:gfa"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:pointOfContact",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:pointOfContact"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:tenant",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:tenant"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:wbsno",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:wbsno"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:output:output",
+                    "target": "bacf91a7-2ce7-43d3-899c-9c0f9c2def25:input:input"
+                  }
+                ]
+              },
+              "id": "b3c37555-6a5a-4a53-d392-b181a2d5bf22",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "billingRecipientContact",
+                  "label": "billingRecipientContact",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "department",
+                  "label": "department",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "gfa",
+                  "label": "gfa",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "pointOfContact",
+                  "label": "pointOfContact",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "wbsno",
+                  "label": "wbsno",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "Data to be inserted",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "__data__",
+                  "label": "Data",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "text",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 418,
+                "top": 184
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "AddTenantDetails",
+              "timeout": 5000,
+              "title": "Insert one document",
+              "type": "modelcollections:insertone",
+              "UpdateAsAttributes": true,
+              "UseContentAwareAutoFill": false
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "e34d2db9-a9b9-4e9b-92c9-c778e0d68716:output:output",
+                    "target": "c5d45c99-5906-483b-851b-77660254a648:input:trigger"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "c5d45c99-5906-483b-851b-77660254a648:output:output",
+                    "target": "e405f8f4-8ebd-49e0-cd4a-036201aac549:input:input"
+                  }
+                ]
+              },
+              "id": "c5d45c99-5906-483b-851b-77660254a648",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 556,
+                "top": 164
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "GetTenantDetails",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find all documents",
+              "type": "modelcollections:findall",
+              "UpdateAsAttributes": false
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "0af7e61b-668e-4e81-8e5e-343b09eef343:output:tenant",
+                    "target": "eb653b8f-2a48-46f9-e968-495b238593f0:input:tenant"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "eb653b8f-2a48-46f9-e968-495b238593f0:output:deposit",
+                    "target": "379a4d71-d4e3-4a42-feeb-f6b9a0344f5f:input:deposit"
+                  }
+                ]
+              },
+              "id": "eb653b8f-2a48-46f9-e968-495b238593f0",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "billingRecipientContact",
+                  "label": "billingRecipientContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "department",
+                  "label": "department",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "gfa",
+                  "label": "gfa",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "pointOfContact",
+                  "label": "pointOfContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "wbsno",
+                  "label": "wbsno",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 563.9982096354166,
+                "top": 44.21701219346788
+              },
+              "ReceiveIndividualFields": true,
+              "surface": "GetRemaningAmount",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find one document",
+              "type": "modelcollections:findone",
+              "UpdateAsAttributes": false
+            },
+            {
+              "CollectionName": "97edab41-5170-4303-921a-d3df280d21dc",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:billingRecipientContact",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:billingRecipientContact"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:department",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:department"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:deposit",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:deposit"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:gfa",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:gfa"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:pointOfContact",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:pointOfContact"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:tenant",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:tenant"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:wbsno",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:wbsno"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "6fc1b148-9cbe-4975-91ea-c430d0d84827:output:output",
+                    "target": "c88e690b-221f-4fbf-f5a9-ab8a9253aa2f:input:input"
+                  }
+                ]
+              },
+              "id": "6fc1b148-9cbe-4975-91ea-c430d0d84827",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "billingRecipientContact",
+                  "label": "billingRecipientContact",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "department",
+                  "label": "department",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "gfa",
+                  "label": "gfa",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "pointOfContact",
+                  "label": "pointOfContact",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "wbsno",
+                  "label": "wbsno",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 397,
+                "top": 205
+              },
+              "ReceiveIndividualFields": false,
+              "surface": "UpdateTenantDetails",
               "TakeFilterFromPin": false,
               "timeout": 5000,
               "title": "Update one document",
@@ -1799,20 +2490,11 @@
                   "id": "tenant",
                   "label": "tenant",
                   "type": ""
-                },
-                {
-                  "dataType": "",
-                  "description": "Entire result",
-                  "documentation": "",
-                  "example": "",
-                  "id": "output",
-                  "label": "All Output",
-                  "type": ""
                 }
               ],
               "position": {
-                "left": 331,
-                "top": 63
+                "left": 360.75000762939453,
+                "top": 334.7500228881836
               },
               "ReceiveIndividualFields": true,
               "surface": "GetRemaningAmount",
@@ -2960,6 +3642,144 @@
               "schema": "{\"type\":\"object\"}",
               "static": true,
               "surface": "AddMeter",
+              "title": "Action",
+              "type": "actionstart"
+            },
+            {
+              "actionName": "AddTenantDetails",
+              "canOverrideCredentials": false,
+              "capability": "",
+              "connections": {
+                "inputs": [],
+                "outputs": [
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:billingRecipientContact",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:billingRecipientContact"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:department",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:department"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:deposit",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:deposit"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:gfa",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:gfa"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:pointOfContact",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:pointOfContact"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:tenant",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:tenant"
+                  },
+                  {
+                    "source": "92b3516c-692a-498f-c47b-6972688b9c2c:output:wbsno",
+                    "target": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:input:wbsno"
+                  }
+                ]
+              },
+              "debug": false,
+              "docs": "",
+              "id": "92b3516c-692a-498f-c47b-6972688b9c2c",
+              "initiate": false,
+              "inputValues": [],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "billingRecipientContact",
+                  "label": "billingRecipientContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "department",
+                  "label": "department",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "gfa",
+                  "label": "gfa",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "pointOfContact",
+                  "label": "pointOfContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "wbsno",
+                  "label": "wbsno",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 112,
+                "top": 164
+              },
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"Department\":{\"type\":\"string\"},\"Wbsno\":{\"type\":\"string\"},\"GFA\":{\"type\":\"string\"},\"PointOfContact\":{\"type\":\"string\"},\"BillingRecipientContact\":{\"type\":\"string\"},\"Deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"Department\",\"Wbsno\",\"GFA\",\"PointOfContact\",\"BillingRecipientContact\",\"Deposit\"]}",
+              "static": true,
+              "surface": "AddTenantDetails",
               "title": "Action",
               "type": "actionstart"
             },
@@ -4858,7 +5678,15 @@
                 "outputs": [
                   {
                     "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
+                    "target": "45172037-3b27-4e5f-c13c-bcceae46e094:input:remainingAmount"
+                  },
+                  {
+                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
                     "target": "84b77b85-2334-4a4c-9da5-89cb84ccfbf4:input:pendingDues"
+                  },
+                  {
+                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
+                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:remainingAmount"
                   }
                 ]
               },
@@ -4930,8 +5758,8 @@
                 }
               ],
               "position": {
-                "left": 260,
-                "top": 339
+                "left": 263.10763888888886,
+                "top": 394.88888210720484
               },
               "shouldCacheByUser": false,
               "shouldCacheErrorResults": false,
@@ -4952,7 +5780,7 @@
                   },
                   {
                     "source": "0af7e61b-668e-4e81-8e5e-343b09eef343:output:tenant",
-                    "target": "ea28f183-7e1e-4feb-ef9c-46475c8052e9:input:tenant"
+                    "target": "eb653b8f-2a48-46f9-e968-495b238593f0:input:tenant"
                   }
                 ]
               },
@@ -4991,8 +5819,8 @@
                 }
               ],
               "position": {
-                "left": 85,
-                "top": 84
+                "left": 105,
+                "top": 182.74999618530273
               },
               "preProcessService": "",
               "published": false,
@@ -5098,60 +5926,23 @@
               "type": "callaction"
             },
             {
-              "actionName": "GetTenantDeposit",
-              "cacheTime": "",
+              "actionName": "GetTenantDetails",
+              "canOverrideCredentials": false,
+              "capability": "",
               "connections": {
-                "inputs": [
-                  {
-                    "source": "0af7e61b-668e-4e81-8e5e-343b09eef343:output:tenant",
-                    "target": "ea28f183-7e1e-4feb-ef9c-46475c8052e9:input:tenant"
-                  }
-                ],
+                "inputs": [],
                 "outputs": [
                   {
-                    "source": "ea28f183-7e1e-4feb-ef9c-46475c8052e9:output:deposit",
-                    "target": "379a4d71-d4e3-4a42-feeb-f6b9a0344f5f:input:deposit"
+                    "source": "e34d2db9-a9b9-4e9b-92c9-c778e0d68716:output:output",
+                    "target": "c5d45c99-5906-483b-851b-77660254a648:input:trigger"
                   }
                 ]
               },
-              "id": "ea28f183-7e1e-4feb-ef9c-46475c8052e9",
-              "inputValues": [
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "instance",
-                  "label": "Instance",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                },
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "tenant",
-                  "label": "tenant",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                },
-                {
-                  "description": "",
-                  "disablelog": "",
-                  "documentation": "",
-                  "id": "trigger",
-                  "label": "Trigger",
-                  "transformation": "",
-                  "transformationOptions": "",
-                  "type": "",
-                  "value": ""
-                }
-              ],
-              "isCachingEnabled": false,
-              "modelName": "TenantExtension",
+              "debug": false,
+              "docs": "",
+              "id": "e34d2db9-a9b9-4e9b-92c9-c778e0d68716",
+              "initiate": false,
+              "inputValues": [],
               "outputValues": [
                 {
                   "dataType": "",
@@ -5167,29 +5958,23 @@
                   "description": "",
                   "documentation": "",
                   "example": "",
-                  "id": "deposit",
-                  "label": "deposit",
-                  "type": ""
-                },
-                {
-                  "dataType": "",
-                  "description": "",
-                  "documentation": "",
-                  "example": "",
                   "id": "output",
                   "label": "All Output",
                   "type": ""
                 }
               ],
               "position": {
-                "left": 339,
-                "top": 364
+                "left": 260,
+                "top": 156
               },
-              "shouldCacheByUser": false,
-              "shouldCacheErrorResults": false,
-              "surface": "GetRemaningAmount",
-              "title": "CallAction",
-              "type": "callaction"
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"department\":{\"type\":\"string\"},\"wbsno\":{\"type\":\"string\"},\"gfa\":{\"type\":\"string\"},\"pointOfContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"billingRecipientContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"department\",\"wbsno\",\"gfa\",\"pointOfContact\",\"billingRecipientContact\",\"deposit\"]}}",
+              "static": true,
+              "surface": "GetTenantDetails",
+              "title": "Action",
+              "type": "actionstart"
             },
             {
               "actionName": "GetTenantTags",
@@ -5658,7 +6443,7 @@
               "preProcessService": "",
               "published": false,
               "roles": [],
-              "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
+              "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}",
               "static": true,
               "surface": "OffboardTenant",
               "title": "Action",
@@ -6188,6 +6973,144 @@
               "type": "callaction"
             },
             {
+              "actionName": "UpdateTenantDetails",
+              "canOverrideCredentials": false,
+              "capability": "",
+              "connections": {
+                "inputs": [],
+                "outputs": [
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:billingRecipientContact",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:billingRecipientContact"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:department",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:department"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:deposit",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:deposit"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:gfa",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:gfa"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:pointOfContact",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:pointOfContact"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:tenant",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:tenant"
+                  },
+                  {
+                    "source": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c:output:wbsno",
+                    "target": "6fc1b148-9cbe-4975-91ea-c430d0d84827:input:wbsno"
+                  }
+                ]
+              },
+              "debug": false,
+              "docs": "",
+              "id": "5b4918c3-1858-4aca-c1ce-f2a90c5a698c",
+              "initiate": false,
+              "inputValues": [],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "billingRecipientContact",
+                  "label": "billingRecipientContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "department",
+                  "label": "department",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "gfa",
+                  "label": "gfa",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "pointOfContact",
+                  "label": "pointOfContact",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "wbsno",
+                  "label": "wbsno",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 116,
+                "top": 202
+              },
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
+              "static": true,
+              "surface": "UpdateTenantDetails",
+              "title": "Action",
+              "type": "actionstart"
+            },
+            {
               "actor-count": 1,
               "connections": {
                 "inputs": [
@@ -6564,7 +7487,201 @@
               "type": "es6javascript"
             },
             {
-              "code": "const invoice = runtime.inputs().invoice;\r\nconst deposit = runtime.inputs().deposit;\r\n\r\nruntime.done({ toalDue: deposit - invoice.total })",
+              "code": "const amountLeft = runtime.inputs().remainingAmount;\r\n\r\nconst email = 'niranga@ecyber.com';\r\nconst subject = 'Offboarding Details';\r\nconst message = `We will verify your offboarding request and you have left ${amountLeft} in your deposit`;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    tenantEmail: email\r\n})\r\n\r\n\r\n",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
+                    "target": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:input:remainingAmount"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:message",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Message"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:subject",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Subject"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:tenantEmail",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Email"
+                  }
+                ]
+              },
+              "description": "",
+              "id": "ae4dc712-1dae-4faf-e798-e548bd15f7ac",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "remainingAmount",
+                  "label": "remainingAmount",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "message",
+                  "label": "message",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "subject",
+                  "label": "subject",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenantEmail",
+                  "label": "tenantEmail",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 746.888902452257,
+                "top": 473.88888888888886
+              },
+              "surface": "OffboardTenant",
+              "timeoutMilliseconds": 5000,
+              "title": "ES6Javascript",
+              "type": "es6javascript"
+            },
+            {
+              "code": "const amountLeft = runtime.inputs().remainingAmount;\r\n\r\nconst email = 'niranga@ecyber.com';\r\nconst subject = 'Offboarding Request';\r\nconst message = `New offboarding request from tenant and he has left amount ${amountLeft} in deposit: `;\r\n\r\nruntime.done({\r\n    message,\r\n    subject,\r\n    adminEmail: email\r\n})\r\n\r\n\r\n",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "b51dc053-55e9-4d91-f5bc-2b844d250376:output:due",
+                    "target": "45172037-3b27-4e5f-c13c-bcceae46e094:input:remainingAmount"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:adminEmail",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Email"
+                  },
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:message",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Message"
+                  },
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:subject",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Subject"
+                  }
+                ]
+              },
+              "description": "",
+              "id": "45172037-3b27-4e5f-c13c-bcceae46e094",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "remainingAmount",
+                  "label": "remainingAmount",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "adminEmail",
+                  "label": "adminEmail",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "message",
+                  "label": "message",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "subject",
+                  "label": "subject",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 745.8888753255209,
+                "top": 247.88886176215277
+              },
+              "surface": "OffboardTenant",
+              "timeoutMilliseconds": 5000,
+              "title": "ES6Javascript",
+              "type": "es6javascript"
+            },
+            {
+              "code": "const invoice = runtime.inputs().invoice;\r\nconst deposit = runtime.inputs().deposit;\r\nlet totalConsumed = !invoice ? 0 : invoice.total;\r\n\r\nruntime.done({ toalDue: deposit - totalConsumed })",
               "connections": {
                 "inputs": [
                   {
@@ -6572,7 +7689,7 @@
                     "target": "379a4d71-d4e3-4a42-feeb-f6b9a0344f5f:input:invoice"
                   },
                   {
-                    "source": "ea28f183-7e1e-4feb-ef9c-46475c8052e9:output:deposit",
+                    "source": "eb653b8f-2a48-46f9-e968-495b238593f0:output:deposit",
                     "target": "379a4d71-d4e3-4a42-feeb-f6b9a0344f5f:input:deposit"
                   }
                 ],
@@ -6641,8 +7758,8 @@
                 }
               ],
               "position": {
-                "left": 588,
-                "top": 118
+                "left": 882.8888617621527,
+                "top": 308.88888888888886
               },
               "surface": "GetRemaningAmount",
               "timeoutMilliseconds": 5000,
@@ -7281,8 +8398,8 @@
               ],
               "outputValues": [],
               "position": {
-                "left": 827,
-                "top": 178
+                "left": 1190.998263888889,
+                "top": 214.76387871636285
               },
               "surface": "GetRemaningAmount",
               "title": "Output",
@@ -7355,6 +8472,90 @@
               "surface": "AddMeter",
               "title": "Equals",
               "type": "equals"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:adminEmail",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Email"
+                  },
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:message",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Message"
+                  },
+                  {
+                    "source": "45172037-3b27-4e5f-c13c-bcceae46e094:output:subject",
+                    "target": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f:input:Subject"
+                  }
+                ],
+                "outputs": []
+              },
+              "id": "8bf572a5-51ec-4b4b-d7aa-99250d35ad2f",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Email",
+                  "label": "Email",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Message",
+                  "label": "Message",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Subject",
+                  "label": "Subject",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 1036.6544596354167,
+                "top": 235.21701388888889
+              },
+              "surface": "OffboardTenant",
+              "title": "SendEmail",
+              "type": "objectaction:System:SendEmail"
             },
             {
               "connections": {
@@ -7499,6 +8700,51 @@
               "connections": {
                 "inputs": [
                   {
+                    "source": "6fc1b148-9cbe-4975-91ea-c430d0d84827:output:output",
+                    "target": "c88e690b-221f-4fbf-f5a9-ab8a9253aa2f:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "c88e690b-221f-4fbf-f5a9-ab8a9253aa2f",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 690,
+                "top": 202
+              },
+              "surface": "UpdateTenantDetails",
+              "title": "Output",
+              "type": "actionoutput2"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
                     "source": "7fc38cc2-ade6-4bc6-9c53-86f190b1455e:output:output",
                     "target": "d24d5ab7-0725-42b8-95c0-c21666ef4b76:input:input"
                   }
@@ -7578,8 +8824,8 @@
               ],
               "outputValues": [],
               "position": {
-                "left": 806,
-                "top": 161
+                "left": 753,
+                "top": 44
               },
               "surface": "OffboardTenant",
               "title": "Output",
@@ -7695,6 +8941,90 @@
               "connections": {
                 "inputs": [
                   {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:message",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Message"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:subject",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Subject"
+                  },
+                  {
+                    "source": "ae4dc712-1dae-4faf-e798-e548bd15f7ac:output:tenantEmail",
+                    "target": "859e516c-6af3-44fd-d095-924762af8fff:input:Email"
+                  }
+                ],
+                "outputs": []
+              },
+              "id": "859e516c-6af3-44fd-d095-924762af8fff",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Email",
+                  "label": "Email",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Message",
+                  "label": "Message",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "Subject",
+                  "label": "Subject",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": "Offboarding"
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "Output",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 1078.545193142361,
+                "top": 469.10763210720484
+              },
+              "surface": "OffboardTenant",
+              "title": "SendEmail",
+              "type": "objectaction:System:SendEmail"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
                     "source": "b2d27d76-aa1c-4edf-d3da-a1cc79bc15e7:output:result",
                     "target": "2e818b2e-8a2b-4914-b80b-73d2882f4840:input:input"
                   }
@@ -7733,6 +9063,51 @@
                 "top": 165.5
               },
               "surface": "EditInvoice",
+              "title": "Output",
+              "type": "actionoutput2"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "b3c37555-6a5a-4a53-d392-b181a2d5bf22:output:output",
+                    "target": "bacf91a7-2ce7-43d3-899c-9c0f9c2def25:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "bacf91a7-2ce7-43d3-899c-9c0f9c2def25",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 734,
+                "top": 245
+              },
+              "surface": "AddTenantDetails",
               "title": "Output",
               "type": "actionoutput2"
             },
@@ -7979,6 +9354,51 @@
                 "top": 102
               },
               "surface": "GetGlobalSettings",
+              "title": "Output",
+              "type": "actionoutput2"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "c5d45c99-5906-483b-851b-77660254a648:output:output",
+                    "target": "e405f8f4-8ebd-49e0-cd4a-036201aac549:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "",
+              "id": "e405f8f4-8ebd-49e0-cd4a-036201aac549",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 850,
+                "top": 181
+              },
+              "surface": "GetTenantDetails",
               "title": "Output",
               "type": "actionoutput2"
             },
@@ -8532,6 +9952,73 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "AddTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "billingRecipientContact",
+              "department",
+              "deposit",
+              "gfa",
+              "pointOfContact",
+              "tenant",
+              "wbsno"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "billingRecipientContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "department"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "deposit"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "gfa"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "pointOfContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "wbsno"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"Department\":{\"type\":\"string\"},\"Wbsno\":{\"type\":\"string\"},\"GFA\":{\"type\":\"string\"},\"PointOfContact\":{\"type\":\"string\"},\"BillingRecipientContact\":{\"type\":\"string\"},\"Deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"Department\",\"Wbsno\",\"GFA\",\"PointOfContact\",\"BillingRecipientContact\",\"Deposit\"]}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "ApproveTenantOffboarding",
             "outputs": [
               ""
@@ -8895,6 +10382,22 @@
             "capability": "",
             "docs": "",
             "initiate": false,
+            "name": "GetTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [],
+            "parametersExtended": [],
+            "published": false,
+            "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"department\":{\"type\":\"string\"},\"wbsno\":{\"type\":\"string\"},\"gfa\":{\"type\":\"string\"},\"pointOfContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"billingRecipientContact\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"}},\"required\":[\"name\",\"phone\",\"email\",\"address\"]}},\"deposit\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"department\",\"wbsno\",\"gfa\",\"pointOfContact\",\"billingRecipientContact\",\"deposit\"]}}",
+            "schemaFrozen": false,
+            "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
             "name": "GetTenantTags",
             "outputs": [
               ""
@@ -8955,7 +10458,7 @@
               }
             ],
             "published": false,
-            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\"]}",
+            "schema": "{\"type\":\"object\",\"properties\":{\"_id\":{\"type\":\"string\"},\"tenant\":{\"type\":\"string\"},\"initiatedUser\":{\"type\":\"string\"},\"intiatedDate\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"pendingDues\":{\"type\":\"number\"},\"TerminatedDate\":{\"type\":\"string\"},\"remarks\":{\"type\":\"string\"}},\"required\":[\"_id\",\"tenant\",\"initiatedUser\",\"intiatedDate\",\"status\",\"pendingDues\",\"TerminatedDate\",\"remarks\"]}",
             "schemaFrozen": false,
             "static": true
           },
@@ -9036,6 +10539,73 @@
             "schema": "",
             "schemaFrozen": false,
             "static": true
+          },
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
+            "name": "UpdateTenantDetails",
+            "outputs": [
+              ""
+            ],
+            "parameters": [
+              "billingRecipientContact",
+              "department",
+              "deposit",
+              "gfa",
+              "pointOfContact",
+              "tenant",
+              "wbsno"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "billingRecipientContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "department"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "deposit"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "gfa"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "pointOfContact"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              },
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "wbsno"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"matchedCount\":{\"type\":\"integer\"},\"modifiedCount\":{\"type\":\"integer\"}},\"required\":[\"matchedCount\",\"modifiedCount\"]}",
+            "schemaFrozen": false,
+            "static": true
           }
         ],
         "uioptions": {},
@@ -9057,6 +10627,12 @@
           "GUID": "4b7d9d99-ce9c-4426-b8b6-9a7137a2704d",
           "MapKey": "97",
           "Name": "meters"
+        },
+        {
+          "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"department\",\"dataType\":\"string\"},{\"name\":\"wbsno\",\"dataType\":\"string\"},{\"name\":\"gfa\",\"dataType\":\"string\"},{\"name\":\"pointOfContact\",\"dataType\":\"json\"},{\"name\":\"billingRecipientContact\",\"dataType\":\"json\"},{\"name\":\"deposit\",\"dataType\":\"string\"}]",
+          "GUID": "97edab41-5170-4303-921a-d3df280d21dc",
+          "MapKey": "97",
+          "Name": "TenantInfo"
         },
         {
           "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"id\",\"dataType\":\"string\"},{\"name\":\"start\",\"dataType\":\"string\"},{\"name\":\"end\",\"dataType\":\"string\"},{\"name\":\"status\",\"dataType\":\"string\"},{\"name\":\"invoice\",\"dataType\":\"json\"}]",
