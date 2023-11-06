@@ -1,4 +1,14 @@
 @import "common.scss";
+
+.offboard-modal {
+    .actions{
+        margin-top: 15px;
+    }
+    .uxp-button{
+        margin: 0;
+        float: right;
+    }
+}
 .tenants {
     position: relative;
     height: 85%;
@@ -27,6 +37,26 @@
 
     .data-table-item {
         margin-left: 7.5px;
+    }
+
+    .actions{
+        margin: 5px 0;
+    }
+    .reject-btn{
+        margin-top: 5px;
+    }
+}
+
+.offboard-tenant{
+    .actions {
+        margin: 5px 0;
+        display: flex;
+        gap: 5px;
+
+        .uxp-button{
+            margin: 0;
+            float: left;
+        }
     }
 }
 
@@ -167,6 +197,32 @@
 
         .up-logo {
             background-image: $waterIcon;
+        }
+    }
+}
+
+.edit-tenant-details {
+    .main {
+        font-weight: 600;
+    }
+    .multi{
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .row{
+        display: flex;
+        gap: 10px;
+        .col{
+            width: 100%;
+        }
+    }
+
+    .actions {
+        margin: 10px 0;
+        .uxp-button {
+            margin: 0;
+            float: right;
         }
     }
 }

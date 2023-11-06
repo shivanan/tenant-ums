@@ -10,6 +10,20 @@
             "tags": []
         },
         {
+            "id": "approve_offboarding_tenants",
+            "name": "Approve Offboarding Tenants",
+            "description": "Approve Offboard request for a tenant",
+            "icon": "",
+            "tags": []
+        },
+        {
+            "id": "tenant_details",
+            "name": "Tenant Details",
+            "description": "This widget will show tenant registration details",
+            "icon": "",
+            "tags": []
+        },
+        {
             "id": "price-config",
             "name": "Tenant Utility Metering Configuration",
             "description": "This widget is for configuring various rates and parameters for tenant utility metering and billing",

@@ -1,0 +1,278 @@
+{
+  "models": [
+    {
+      "ApiRoutes": [],
+      "Definition": {
+        "actions": [
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
+            "name": "GetTenantDeposit",
+            "outputs": [
+              "deposit"
+            ],
+            "parameters": [
+              "tenant"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"deposit\":{\"type\":\"string\"}},\"required\":[\"deposit\"]}",
+            "schemaFrozen": false,
+            "static": true
+          }
+        ],
+        "attributes": [],
+        "flows": {
+          "blocks": [
+            {
+              "CollectionName": "248d93d7-1849-4edc-94b5-87d074ac9c31",
+              "configuration": "[{\"IsEither\":true,\"Conditions\":[{\"Attribute\":\"tenant\",\"Operator\":\"eq\",\"Value\":\"tenant\",\"IsPin\":true}],\"Groups\":[]}]",
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "25043070-6a59-467b-9f44-85de8029d96f:output:tenant",
+                    "target": "0cb22fc9-93cb-48b2-848e-3b1c7419f4dd:input:tenant"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "source": "0cb22fc9-93cb-48b2-848e-3b1c7419f4dd:output:deposit",
+                    "target": "59db3a29-2a40-4cd5-cc30-c318b34ae235:input:input"
+                  }
+                ]
+              },
+              "id": "0cb22fc9-93cb-48b2-848e-3b1c7419f4dd",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "deposit",
+                  "label": "deposit",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 305,
+                "top": 97
+              },
+              "ReceiveIndividualFields": true,
+              "surface": "GetTenantDeposit",
+              "TakeFilterFromPin": false,
+              "timeout": 5000,
+              "title": "Find one document",
+              "type": "modelcollections:findone",
+              "UpdateAsAttributes": false
+            },
+            {
+              "actionName": "GetTenantDeposit",
+              "canOverrideCredentials": false,
+              "capability": "",
+              "connections": {
+                "inputs": [],
+                "outputs": [
+                  {
+                    "source": "25043070-6a59-467b-9f44-85de8029d96f:output:tenant",
+                    "target": "0cb22fc9-93cb-48b2-848e-3b1c7419f4dd:input:tenant"
+                  }
+                ]
+              },
+              "debug": false,
+              "docs": "",
+              "id": "25043070-6a59-467b-9f44-85de8029d96f",
+              "initiate": false,
+              "inputValues": [],
+              "outputValues": [
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "__error__",
+                  "label": "Error",
+                  "type": "error"
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "output",
+                  "label": "All Output",
+                  "type": ""
+                },
+                {
+                  "dataType": "",
+                  "description": "",
+                  "documentation": "",
+                  "example": "",
+                  "id": "tenant",
+                  "label": "tenant",
+                  "type": ""
+                }
+              ],
+              "position": {
+                "left": 60,
+                "top": 60
+              },
+              "preProcessService": "",
+              "published": false,
+              "roles": [],
+              "schema": "{\"type\":\"object\",\"properties\":{\"deposit\":{\"type\":\"string\"}},\"required\":[\"deposit\"]}",
+              "static": true,
+              "surface": "GetTenantDeposit",
+              "title": "Action",
+              "type": "actionstart"
+            },
+            {
+              "connections": {
+                "inputs": [
+                  {
+                    "source": "0cb22fc9-93cb-48b2-848e-3b1c7419f4dd:output:deposit",
+                    "target": "59db3a29-2a40-4cd5-cc30-c318b34ae235:input:input"
+                  }
+                ],
+                "outputs": []
+              },
+              "fieldName": "deposit",
+              "id": "59db3a29-2a40-4cd5-cc30-c318b34ae235",
+              "inputValues": [
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "input",
+                  "label": "Value",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                },
+                {
+                  "description": "",
+                  "disablelog": "",
+                  "documentation": "",
+                  "id": "trigger",
+                  "label": "Trigger",
+                  "transformation": "",
+                  "transformationOptions": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "outputValues": [],
+              "position": {
+                "left": 561,
+                "top": 140
+              },
+              "surface": "GetTenantDeposit",
+              "title": "Output",
+              "type": "actionoutput2"
+            }
+          ],
+          "position": {
+            "left": 0,
+            "top": 0
+          }
+        },
+        "sources": [
+          {
+            "canOverrideCredentials": false,
+            "capability": "",
+            "docs": "",
+            "initiate": false,
+            "name": "GetTenantDeposit",
+            "outputs": [
+              "deposit"
+            ],
+            "parameters": [
+              "tenant"
+            ],
+            "parametersExtended": [
+              {
+                "dataType": "",
+                "docs": "",
+                "example": "",
+                "id": "tenant"
+              }
+            ],
+            "published": false,
+            "schema": "{\"type\":\"object\",\"properties\":{\"deposit\":{\"type\":\"string\"}},\"required\":[\"deposit\"]}",
+            "schemaFrozen": false,
+            "static": true
+          }
+        ],
+        "uioptions": {},
+        "version": "v2"
+      },
+      "Icon": "",
+      "JSModules": [],
+      "Key": "98",
+      "MetadataDictionary": "null",
+      "ModelCollections": [
+        {
+          "Attributes": "[{\"name\":\"tenant\",\"dataType\":\"string\"},{\"name\":\"deposit\",\"dataType\":\"string\"}]",
+          "GUID": "248d93d7-1849-4edc-94b5-87d074ac9c31",
+          "MapKey": "98",
+          "Name": "Deposits"
+        }
+      ],
+      "Name": "TenantExtension",
+      "Roles": [],
+      "UIDefinition": null
+    }
+  ],
+  "version": "2.0"
+}
